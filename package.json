@@ -2,23 +2,16 @@
   "name": "my-portfolio",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "dev": "pnpm --filter portfolio dev",
+    "build": "pnpm --filter portfolio build",
+    "ds:dev": "pnpm --filter design-system dev",
+    "lint": "pnpm -r lint"
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
-    "turbo": "^2.8.21",
-    "typescript": "5.9.2"
+    "typescript": "^5.4.5"
   },
   "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@11.11.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+    "node": ">=18",
+    "pnpm": ">=9"
+  }
 }
