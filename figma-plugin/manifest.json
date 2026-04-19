@@ -1,0 +1,12 @@
+{
+  "name": "Claude MCP Bridge",
+  "id": "claude-mcp-bridge-zoeportfolio",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma", "dev"],
+  "networkAccess": {
+    "allowedDomains": ["*"],
+    "reasoning": "Connects to a local Claude Code MCP server (localhost:3845) to sync design tokens into Figma Variables."
+  }
+}

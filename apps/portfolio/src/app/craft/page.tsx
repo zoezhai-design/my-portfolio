@@ -1,10 +1,7 @@
-import { Nav } from '@my-portfolio/design-system';
-
 export default function CraftPage() {
   return (
-    <>
-      <Nav />
+    <main>
       <h1>Craft</h1>
-    </>
+    </main>
   );
 }

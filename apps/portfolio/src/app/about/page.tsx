@@ -1,10 +1,7 @@
-import { Nav } from '@my-portfolio/design-system';
-
 export default function AboutPage() {
   return (
-    <>
-      <Nav />
+    <main>
       <h1>About</h1>
-    </>
+    </main>
   );
 }
