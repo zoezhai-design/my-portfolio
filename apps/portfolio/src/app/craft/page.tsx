@@ -1,10 +1,10 @@
 import { Nav } from '@my-portfolio/design-system';
 
-export default function HomePage() {
+export default function CraftPage() {
   return (
     <>
       <Nav />
-      <h1>Home</h1>
+      <h1>Craft</h1>
     </>
   );
 }

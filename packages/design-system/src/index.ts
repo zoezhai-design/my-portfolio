@@ -1,5 +1,6 @@
-// @my-portfolio/design-system
-// Components are exported here as they're built in P1
-// For now this bootstraps the package so the monorepo resolves correctly
+export { Nav }  from './components/Nav';
+export { Card } from './components/Card';
+export { Chip } from './components/Chip';
 
-export {};
+export type { CardProps } from './components/Card';
+export type { ChipProps } from './components/Chip';
