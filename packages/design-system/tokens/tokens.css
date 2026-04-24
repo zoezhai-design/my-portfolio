@@ -1,24 +1,25 @@
 /* ═══════════════════════════════════════════════════════════════
    Design Tokens — @my-portfolio/design-system
-   Aesthetic: Frontier AI · Dark minimal (Linear · Vercel · Anthropic)
-
-   ⚠️  Source of truth — do not edit manually
-   Sync to Figma: Claude Code → paste prompt from FIGMA-SYNC.md
+   Source of truth: Figma "AI Native Design System" (qzstgtamLkKo7P3bbcjMyF)
+   Generated from Figma Variables + Text Styles. Do not edit manually.
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
 
   /* ════════════════════════════════
      PRIMITIVES
-     Raw values. Never used in
-     components directly — always
-     reference a semantic token.
+     Raw values. Never reference in
+     components — use semantic tokens.
      ════════════════════════════════ */
 
-  /* Gray */
+  /* Gray scale */
   --p-gray-0:   #ffffff;
+  --p-gray-10:  #fafafa;
+  --p-gray-25:  #f5f5f5;
   --p-gray-50:  #f9f9f9;
   --p-gray-100: #f2f2f2;
+  --p-gray-125: #ebebeb;
+  --p-gray-150: #e8e8e8;
   --p-gray-200: #e0e0e0;
   --p-gray-300: #c2c2c2;
   --p-gray-400: #a0a0a0;
@@ -31,6 +32,7 @@
   --p-gray-925: #111111;
   --p-gray-950: #0d0d0d;
   --p-gray-975: #080808;
+  --p-gray-985: #050505;
 
   /* Brand · Violet */
   --p-brand-50:  #f3f1ff;
@@ -46,88 +48,101 @@
   --p-brand-950: #16123a;
 
   /* Status */
-  --p-green-400: #4ade80;
-  --p-green-700: #15803d;
-  --p-green-950: #031a0a;
-  --p-green-50:  #f0fdf4;
+  --p-green-50:   #f0fcf4;
+  --p-green-400:  #4ade80;
+  --p-green-700:  #158040;
+  --p-green-950:  #030e0a;
 
-  --p-amber-400: #fbbf24;
-  --p-amber-700: #b45309;
-  --p-amber-950: #1a0f00;
-  --p-amber-50:  #fffbeb;
+  --p-amber-50:   #fffbeb;
+  --p-amber-400:  #fbbf24;
+  --p-amber-700:  #b45309;
+  --p-amber-950:  #1a0f00;
 
-  --p-red-400:   #f87171;
-  --p-red-700:   #b91c1c;
-  --p-red-950:   #1a0404;
-  --p-red-50:    #fef2f2;
+  --p-red-50:     #fef2f2;
+  --p-red-400:    #f87171;
+  --p-red-700:    #b91c1c;
+  --p-red-950:    #1a0404;
 
-  --p-blue-400:  #60a5fa;
-  --p-blue-700:  #1d4ed8;
-  --p-blue-950:  #030e24;
-  --p-blue-50:   #eff6ff;
+  --p-blue-50:    #eff6ff;
+  --p-blue-400:   #60a5fa;
+  --p-blue-700:   #1d4ed8;
+  --p-blue-950:   #030e24;
 
   /* ════════════════════════════════
      SEMANTICS — Dark mode (default)
-     These are what all components
-     and styles consume.
+     All components consume these.
      ════════════════════════════════ */
 
   /* ── Background ── */
-  --color-bg:             var(--p-gray-975);   /* page canvas */
-  --color-bg-sunken:      #050505;             /* inputs, code blocks, inset wells */
+  --color-bg:           var(--p-gray-925);   /* page canvas */
+  --color-bg-subtle:    var(--p-gray-985);   /* inputs, code blocks, inset wells */
 
   /* ── Surface ── */
-  --color-surface:        var(--p-gray-925);   /* cards, panels, sheets */
-  --color-surface-raised: var(--p-gray-900);   /* elevated cards, popovers */
+  --color-surface:        var(--p-gray-850);   /* cards, panels */
+  --color-surface-raised: var(--p-gray-800);   /* elevated cards, popovers */
   --color-surface-hover:  var(--p-gray-800);   /* interactive hover */
 
   /* ── Border ── */
-  --color-border:         var(--p-gray-800);
-  --color-border-subtle:  var(--p-gray-850);   /* dividers, separators */
-  --color-border-strong:  var(--p-gray-700);   /* emphasized borders */
+  --color-border:         var(--p-gray-700);   /* default border */
+  --color-border-subtle:  var(--p-gray-800);   /* dividers, separators */
+  --color-border-raised:  var(--p-gray-600);   /* emphasized borders */
 
   /* ── Text ── */
-  --color-text-primary:   var(--p-gray-50);    /* headings, key content */
-  --color-text-secondary: var(--p-gray-400);   /* body, descriptions */
-  --color-text-tertiary:  var(--p-gray-600);   /* metadata, timestamps, disabled */
+  --color-text:           var(--p-gray-50);    /* headings, key content */
+  --color-text-subtle:    var(--p-gray-400);   /* body, descriptions */
 
   /* ── Accent / Brand ── */
-  --color-accent:         var(--p-brand-400);  /* primary CTA, links, active state */
-  --color-accent-surface: var(--p-brand-950);  /* tinted bg — e.g. selected row */
-  --color-accent-text:    var(--p-brand-300);  /* text/icon sitting on accent-surface */
-  --color-accent-on:      var(--p-gray-0);     /* text/icon sitting on solid accent button */
+  --color-accent:         var(--p-brand-400);  /* primary CTA, links, active */
+  --color-accent-subtle:  var(--p-brand-950);  /* tinted bg — selected row */
+  --color-accent-on:      var(--p-gray-925);   /* text/icon on solid accent fill */
 
-  /* ── Status — filled chip style ──
-     Each status has two tokens:
-     -text    = text/icon color (also used as border on filled chip)
-     -surface = chip background color
-     Both pairs are WCAG AA accessible.
+  /* ── Status tokens ──
+     -subtle = background surface
+     -on     = text/icon color on that surface
   */
-  --color-success-text:    var(--p-green-400);  /* 9.1:1 on dark bg */
-  --color-success-surface: var(--p-green-950);
+  --color-success-subtle: var(--p-green-950);
+  --color-success-on:     var(--p-green-400);
 
-  --color-warning-text:    var(--p-amber-400);  /* 8.6:1 on dark bg */
-  --color-warning-surface: var(--p-amber-950);
+  --color-warning-subtle: var(--p-amber-950);
+  --color-warning-on:     var(--p-amber-400);
 
-  --color-error-text:      var(--p-red-400);    /* 5.6:1 on dark bg */
-  --color-error-surface:   var(--p-red-950);
+  --color-error-subtle:   var(--p-red-950);
+  --color-error-on:       var(--p-red-400);
 
-  --color-info-text:       var(--p-blue-400);   /* 5.5:1 on dark bg */
-  --color-info-surface:    var(--p-blue-950);
+  --color-info-subtle:    var(--p-blue-950);
+  --color-info-on:        var(--p-blue-400);
+
+  /* ── Backward-compat aliases ── */
+  --color-bg-sunken:       var(--color-bg-subtle);
+  --color-surface-raised:  var(--color-surface-raised);
+  --color-border-strong:   var(--color-border-raised);
+  --color-text-primary:    var(--color-text);
+  --color-text-secondary:  var(--color-text-subtle);
+  --color-text-tertiary:   var(--p-gray-600);
+  --color-accent-surface:  var(--color-accent-subtle);
+  --color-accent-text:     var(--p-brand-300);
+  --color-success-text:    var(--color-success-on);
+  --color-success-surface: var(--color-success-subtle);
+  --color-warning-text:    var(--color-warning-on);
+  --color-warning-surface: var(--color-warning-subtle);
+  --color-error-text:      var(--color-error-on);
+  --color-error-surface:   var(--color-error-subtle);
+  --color-info-text:       var(--color-info-on);
+  --color-info-surface:    var(--color-info-subtle);
 
   /* ── Spacing · Named by value ── */
-  --space-4:  4px;
-  --space-8:  8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-20: 20px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-40: 40px;
-  --space-48: 48px;
-  --space-64: 64px;
-  --space-80: 80px;
-  --space-96: 96px;
+  --space-4:   4px;
+  --space-8:   8px;
+  --space-12:  12px;
+  --space-16:  16px;
+  --space-20:  20px;
+  --space-24:  24px;
+  --space-32:  32px;
+  --space-40:  40px;
+  --space-48:  48px;
+  --space-64:  64px;
+  --space-80:  80px;
+  --space-96:  96px;
 
   /* ── Radius ── */
   --radius-sm:   4px;
@@ -142,23 +157,25 @@
   --font-mono:    "JetBrains Mono", "Fira Code", monospace;
   --font-display: "Inter", system-ui, sans-serif;
 
-  /* Display */
+  /* Display — Inter Semi Bold, tight tracking */
   --text-display-2xl: 48px; --leading-display-2xl: 56px; --tracking-display-2xl: -0.03em;
   --text-display-xl:  40px; --leading-display-xl:  48px; --tracking-display-xl:  -0.03em;
   --text-display-l:   32px; --leading-display-l:   40px; --tracking-display-l:   -0.02em;
   --text-display-m:   24px; --leading-display-m:   32px; --tracking-display-m:   -0.02em;
 
-  /* Body */
+  /* Body — Inter Regular, no tracking */
   --text-body-l:  18px; --leading-body-l:  28px;
   --text-body-m:  16px; --leading-body-m:  24px;
   --text-body-s:  14px; --leading-body-s:  22px;
 
-  /* Label */
-  --text-label-l: 12px; --leading-label-l: 16px; --tracking-label-l: 0em;
-  --text-label-m: 11px; --leading-label-m: 16px; --tracking-label-m: 0.04em;
-  --text-label-s: 10px; --leading-label-s: 14px; --tracking-label-s: 0.08em;
+  /* Label — Inter Medium */
+  --text-label-2xl: 16px; --leading-label-2xl: 24px; --tracking-label-2xl: 0em;
+  --text-label-xl:  14px; --leading-label-xl:  20px; --tracking-label-xl:  0em;
+  --text-label-l:   12px; --leading-label-l:   16px; --tracking-label-l:   0em;
+  --text-label-m:   11px; --leading-label-m:   16px; --tracking-label-m:   0.04em;
+  --text-label-s:   10px; --leading-label-s:   14px; --tracking-label-s:   0.08em;
 
-  /* Mono */
+  /* Mono — JetBrains Mono Regular */
   --text-mono-m:  12px; --leading-mono-m:  18px;
   --text-mono-s:  11px; --leading-mono-s:  16px;
 
@@ -169,8 +186,8 @@
   --weight-bold:     700;
 
   /* ── Shadow · Functional ── */
-  --shadow-raised:        0 1px 2px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2);
-  --shadow-floating:      0 8px 32px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-raised:       0 1px 2px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.2);
+  --shadow-floating:     0 8px 32px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
   --shadow-pinned-right:  4px 0 8px -2px rgba(0,0,0,0.55);
   --shadow-pinned-left:  -4px 0 8px -2px rgba(0,0,0,0.55);
 
@@ -179,9 +196,9 @@
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --duration-fast:   150ms;
-  --duration-base:   250ms;
-  --duration-slow:   400ms;
+  --duration-fast:  150ms;
+  --duration-base:  250ms;
+  --duration-slow:  400ms;
 
   /* ── Z-index ── */
   --z-base:    0;
@@ -198,34 +215,55 @@
    on <html> or <body>
    ════════════════════════════════ */
 [data-theme="light"] {
-  --color-bg:             #ffffff;
-  --color-bg-sunken:      #f5f5f5;
-  --color-surface:        #fafafa;
-  --color-surface-raised: #f2f2f2;
-  --color-surface-hover:  #e8e8e8;
-  --color-border:         #e0e0e0;
-  --color-border-subtle:  #ebebeb;
-  --color-border-strong:  #c2c2c2;
-  --color-text-primary:   #0d0d0d;
-  --color-text-secondary: #5c5c5c;
-  --color-text-tertiary:  #a0a0a0;
+  --color-bg:           var(--p-gray-0);
+  --color-bg-subtle:    var(--p-gray-100);
+
+  --color-surface:        var(--p-gray-0);
+  --color-surface-raised: var(--p-gray-50);
+  --color-surface-hover:  var(--p-gray-125);
+
+  --color-border:         var(--p-gray-200);
+  --color-border-subtle:  var(--p-gray-125);
+  --color-border-raised:  var(--p-gray-300);
+
+  --color-text:           var(--p-gray-950);
+  --color-text-subtle:    var(--p-gray-500);
 
   --color-accent:         var(--p-brand-600);
-  --color-accent-surface: var(--p-brand-50);
-  --color-accent-text:    var(--p-brand-700);
-  --color-accent-on:      #ffffff;
+  --color-accent-subtle:  var(--p-brand-50);
+  --color-accent-on:      var(--p-gray-925);
 
-  --color-success-text:    var(--p-green-700);
-  --color-success-surface: var(--p-green-50);
-  --color-warning-text:    var(--p-amber-700);
-  --color-warning-surface: var(--p-amber-50);
-  --color-error-text:      var(--p-red-700);
-  --color-error-surface:   var(--p-red-50);
-  --color-info-text:       var(--p-blue-700);
-  --color-info-surface:    var(--p-blue-50);
+  --color-success-subtle: var(--p-green-50);
+  --color-success-on:     var(--p-green-700);
+
+  --color-warning-subtle: var(--p-amber-50);
+  --color-warning-on:     var(--p-amber-700);
+
+  --color-error-subtle:   var(--p-red-50);
+  --color-error-on:       var(--p-red-700);
+
+  --color-info-subtle:    var(--p-blue-50);
+  --color-info-on:        var(--p-blue-700);
+
+  /* backward-compat aliases */
+  --color-bg-sunken:       var(--color-bg-subtle);
+  --color-border-strong:   var(--color-border-raised);
+  --color-text-primary:    var(--color-text);
+  --color-text-secondary:  var(--color-text-subtle);
+  --color-text-tertiary:   var(--p-gray-400);
+  --color-accent-surface:  var(--color-accent-subtle);
+  --color-accent-text:     var(--p-brand-700);
+  --color-success-text:    var(--color-success-on);
+  --color-success-surface: var(--color-success-subtle);
+  --color-warning-text:    var(--color-warning-on);
+  --color-warning-surface: var(--color-warning-subtle);
+  --color-error-text:      var(--color-error-on);
+  --color-error-surface:   var(--color-error-subtle);
+  --color-info-text:       var(--color-info-on);
+  --color-info-surface:    var(--color-info-subtle);
 
   --shadow-raised:       0 1px 3px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.06);
   --shadow-floating:     0 8px 32px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-pinned-right: 4px 0 8px -2px rgba(0,0,0,0.12);
-  --shadow-pinned-left: -4px 0 8px -2px rgba(0,0,0,0.12);
+  --shadow-pinned-right:  4px 0 8px -2px rgba(0,0,0,0.12);
+  --shadow-pinned-left:  -4px 0 8px -2px rgba(0,0,0,0.12);
 }

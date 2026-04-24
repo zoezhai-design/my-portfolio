@@ -29,7 +29,7 @@
   font-size: var(--text-label-l);
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-label-l);
-  color: var(--color-text-primary);
+  color: var(--color-text);
   text-decoration: none;
   transition: opacity var(--duration-fast) var(--ease-out);
 }
@@ -48,14 +48,14 @@
   font-family: var(--font-sans);
   font-size: var(--text-body-s);
   font-weight: var(--weight-regular);
-  color: var(--color-text-secondary);
+  color: var(--color-text-subtle);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out);
 }
 
 .ds-nav__link:hover,
 .ds-nav__link--active {
-  color: var(--color-text-primary);
+  color: var(--color-text);
 }
 
 /* ══════════════════════════
@@ -74,7 +74,7 @@
   line-height: var(--leading-label-m);
   letter-spacing: var(--tracking-label-m);
   font-weight: var(--weight-medium);
-  color: var(--color-text-primary);
+  color: var(--color-text);
   white-space: nowrap;
   border-radius: 0;
 }
@@ -119,10 +119,9 @@
   gap: var(--space-12);
   padding: var(--space-24);
   background: var(--color-surface);
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-border-raised);
   opacity: 1;
-  transition:
-    opacity var(--duration-slow) var(--ease-in-out);
+  transition: opacity var(--duration-slow) var(--ease-in-out);
   z-index: 1;
 }
 
@@ -132,8 +131,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition:
-    opacity var(--duration-slow) var(--ease-in-out);
+  transition: opacity var(--duration-slow) var(--ease-in-out);
   z-index: 2;
 }
 
@@ -167,13 +165,315 @@
   flex-wrap: wrap;
 }
 
-/* Display/M — matches Figma text style exactly */
+.ds-card-description {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-s);
+  line-height: var(--leading-body-s);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+/* Display/M — matches Figma text style */
 .ds-card-title {
   font-family: var(--font-display);
   font-size: var(--text-display-m);
   line-height: var(--leading-display-m);
   letter-spacing: var(--tracking-display-m);
   font-weight: var(--weight-semibold);
-  color: var(--color-text-primary);
+  color: var(--color-text);
   margin: 0;
+}
+
+/* ══════════════════════════
+   CASE STUDY NAV
+   ══════════════════════════ */
+
+.ds-cs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-12) var(--space-48);
+  height: 56px;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.ds-cs-nav__history {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.ds-cs-nav__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-subtle);
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out);
+  padding: 0;
+}
+
+.ds-cs-nav__icon-btn:hover {
+  color: var(--color-text);
+}
+
+.ds-cs-nav__input {
+  width: 400px;
+  height: 32px;
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-s);
+  line-height: var(--leading-body-s);
+  padding: 0 var(--space-12);
+  border-radius: 0;
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.ds-cs-nav__input::placeholder {
+  color: var(--color-text-subtle);
+}
+
+.ds-cs-nav__input:focus {
+  border-color: var(--color-border-raised);
+}
+
+.ds-cs-nav__actions {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.ds-cs-nav__btn {
+  height: 32px;
+  padding: 0 var(--space-12);
+  font-family: var(--font-sans);
+  font-size: var(--text-label-xl);
+  font-weight: var(--weight-medium);
+  border: none;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+  border-radius: 0;
+}
+
+.ds-cs-nav__btn--primary {
+  background: var(--color-accent);
+  color: var(--color-accent-on);
+}
+
+.ds-cs-nav__btn--primary:hover {
+  background: var(--p-brand-300);
+}
+
+.ds-cs-nav__btn--secondary {
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.ds-cs-nav__btn--secondary:hover {
+  background: var(--color-surface-hover);
+}
+
+/* ══════════════════════════
+   CASE STUDY HEADER
+   ══════════════════════════ */
+
+.ds-cs-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+  padding: var(--space-48);
+  background: var(--color-bg);
+}
+
+.ds-cs-header__title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-24);
+  padding: var(--space-24) 0;
+}
+
+.ds-cs-header__title-body {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-24);
+  flex: 1;
+}
+
+.ds-cs-header__project-number {
+  font-family: var(--font-sans);
+  font-size: var(--text-display-xl);
+  line-height: var(--leading-display-xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-display-xl);
+  color: var(--color-text-subtle);
+}
+
+.ds-cs-header__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  line-height: var(--leading-display-xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-display-xl);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.ds-cs-header__description {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-m);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-subtle);
+  margin: 0;
+  flex: 1;
+  padding-top: var(--space-8);
+}
+
+.ds-cs-header__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.ds-cs-header__labels {
+  display: flex;
+  gap: var(--space-24);
+  padding: var(--space-12) 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.ds-cs-header__label {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+  flex: 1;
+}
+
+.ds-cs-header__label-name {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-l);
+  line-height: var(--leading-label-l);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label-l);
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+}
+
+.ds-cs-header__label-value {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-l);
+  line-height: var(--leading-label-l);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label-l);
+  color: var(--color-text);
+}
+
+.ds-cs-header__body {
+  padding-top: var(--space-12);
+}
+
+/* ══════════════════════════
+   GRAPHIC BLOCKS (X1–X4)
+   ══════════════════════════ */
+
+.ds-graphic {
+  padding: var(--space-48);
+  background: var(--color-bg);
+}
+
+.ds-graphic__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.ds-graphic__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ds-graphic__placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-surface-raised);
+  min-height: 400px;
+}
+
+.ds-graphic__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-l);
+  line-height: var(--leading-label-l);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label-l);
+  color: var(--color-text-subtle);
+}
+
+/* X1 — large image + text panel */
+.ds-graphic--x1 > .ds-graphic__content {
+  flex-direction: row;
+  gap: var(--space-48);
+}
+
+.ds-graphic--x1 .ds-graphic__image--large {
+  flex: 0 0 60%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.ds-graphic--x1 .ds-graphic__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-m);
+  color: var(--color-text);
+}
+
+/* X2 — two equal images */
+.ds-graphic--x2 > .ds-graphic__content {
+  flex-direction: row;
+  gap: var(--space-12);
+}
+
+.ds-graphic--x2 .ds-graphic__image {
+  flex: 1;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+/* X3 / X4 — grid images with labels */
+.ds-graphic__labels {
+  display: flex;
+  gap: var(--space-12);
+}
+
+.ds-graphic__label-cell {
+  flex: 1;
+  padding: var(--space-12) 0;
+}
+
+.ds-graphic__images {
+  display: flex;
+  gap: var(--space-12);
+}
+
+.ds-graphic--x3 .ds-graphic__images .ds-graphic__image,
+.ds-graphic--x4 .ds-graphic__images .ds-graphic__image {
+  flex: 1;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
 }
