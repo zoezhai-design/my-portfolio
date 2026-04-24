@@ -477,3 +477,52 @@
   aspect-ratio: 3 / 4;
   overflow: hidden;
 }
+
+/* ══════════════════════════
+   CASE STUDY PAGE
+   ══════════════════════════ */
+
+.ds-case-study {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.ds-cs-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-m);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.ds-cs-side-labels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding-top: var(--space-24);
+}
+
+.ds-cs-side-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.ds-cs-side-label__name {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-l);
+  line-height: var(--leading-label-l);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label-l);
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+}
+
+.ds-cs-side-label__value {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-m);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+}
