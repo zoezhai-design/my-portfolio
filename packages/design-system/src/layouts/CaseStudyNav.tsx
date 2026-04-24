@@ -11,7 +11,9 @@ export function CaseStudyNav({ avatarSrc, avatarAlt = 'Zoe Zhai' }: CaseStudyNav
     <nav className="ds-cs-nav">
       {/* Left — avatar + history buttons */}
       <div className="ds-cs-nav__left">
-        <Avatar src={avatarSrc} alt={avatarAlt} size="medium" initials="ZZ" />
+        <a href="/" className="ds-cs-nav__avatar-link" aria-label="Home">
+          <Avatar src={avatarSrc} alt={avatarAlt} size="medium" initials="ZZ" />
+        </a>
         <div className="ds-cs-nav__history">
           <button
             className="ds-cs-nav__icon-btn"
