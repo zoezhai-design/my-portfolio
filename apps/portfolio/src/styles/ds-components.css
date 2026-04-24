@@ -530,3 +530,149 @@
   font-weight: var(--weight-regular);
   color: var(--color-text);
 }
+
+/* ══════════════════════════
+   HOME GRID
+   ══════════════════════════ */
+
+.home-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: var(--space-48);
+  background: var(--color-bg);
+  min-height: calc(100vh - 56px);
+}
+
+.home-grid__row {
+  display: flex;
+  gap: var(--space-12);
+  height: 720px;
+}
+
+/* Row 1 — large (3/4) + small (1/4) */
+.home-grid__row--r1 .home-card:nth-child(1) { flex: 1365; }
+.home-grid__row--r1 .home-card:nth-child(2) { flex: 447;  }
+
+/* Row 2 — three equal thirds */
+.home-grid__row--r2 .home-card { flex: 1; }
+
+/* Row 3 — quarter + half + quarter */
+.home-grid__row--r3 .home-card:nth-child(1) { flex: 447; }
+.home-grid__row--r3 .home-card:nth-child(2) { flex: 906; }
+.home-grid__row--r3 .home-card:nth-child(3) { flex: 447; }
+
+/* ══════════════════════════
+   HOME CARD
+   ══════════════════════════ */
+
+.home-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Image layer — set via CSS var --home-card-bg */
+.home-card__bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--home-card-bg, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  transition: opacity var(--duration-slow) var(--ease-in-out);
+  z-index: 0;
+}
+
+/* Dark overlay — covers image on hover */
+.home-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface);
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-in-out);
+  z-index: 1;
+}
+
+/* Content — sits above both layers, anchored to bottom */
+.home-card__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  padding: var(--space-24);
+  gap: 0;
+}
+
+/* Title — barely visible on image (very dark); brightens on hover */
+.home-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-m);
+  line-height: var(--leading-display-m);
+  letter-spacing: var(--tracking-display-m);
+  font-weight: var(--weight-semibold);
+  color: var(--p-gray-975);
+  margin: 0;
+  transition: color var(--duration-slow) var(--ease-in-out);
+}
+
+/* Meta — chips + description, collapsed until hover */
+.home-card__meta {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-top: 0;
+  transition:
+    grid-template-rows var(--duration-slow) var(--ease-in-out),
+    opacity var(--duration-base) var(--ease-in-out) 100ms,
+    margin-top var(--duration-slow) var(--ease-in-out);
+}
+
+.home-card__meta-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.home-card__chips {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.home-card__desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-m);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+/* ── Hover state ────────────────────────────────────────────── */
+
+.home-card:hover .home-card__bg {
+  opacity: 0;
+}
+
+.home-card:hover .home-card__overlay {
+  opacity: 1;
+}
+
+.home-card:hover .home-card__title {
+  color: var(--color-text);
+}
+
+.home-card:hover .home-card__meta {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: var(--space-12);
+}
