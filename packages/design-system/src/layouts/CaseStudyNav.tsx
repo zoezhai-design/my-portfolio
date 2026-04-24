@@ -1,18 +1,9 @@
 export interface CaseStudyNavProps {
   onBack?: () => void;
   onForward?: () => void;
-  searchPlaceholder?: string;
-  primaryAction?: { label: string; onClick?: () => void };
-  secondaryAction?: { label: string; onClick?: () => void };
 }
 
-export function CaseStudyNav({
-  onBack,
-  onForward,
-  searchPlaceholder = 'Search…',
-  primaryAction,
-  secondaryAction,
-}: CaseStudyNavProps) {
+export function CaseStudyNav({ onBack, onForward }: CaseStudyNavProps) {
   return (
     <nav className="ds-cs-nav">
       <div className="ds-cs-nav__history">
@@ -32,27 +23,6 @@ export function CaseStudyNav({
         >
           <ArrowRight />
         </button>
-      </div>
-
-      <div className="ds-cs-nav__search">
-        <input
-          className="ds-cs-nav__input"
-          type="search"
-          placeholder={searchPlaceholder}
-        />
-      </div>
-
-      <div className="ds-cs-nav__actions">
-        {primaryAction && (
-          <button className="ds-cs-nav__btn ds-cs-nav__btn--primary" onClick={primaryAction.onClick} type="button">
-            {primaryAction.label}
-          </button>
-        )}
-        {secondaryAction && (
-          <button className="ds-cs-nav__btn ds-cs-nav__btn--secondary" onClick={secondaryAction.onClick} type="button">
-            {secondaryAction.label}
-          </button>
-        )}
       </div>
     </nav>
   );

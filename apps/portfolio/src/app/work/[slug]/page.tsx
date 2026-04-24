@@ -24,10 +24,7 @@ export default function CaseStudyPage({ params }: PageProps) {
   return (
     <main className="ds-case-study">
       {/* ── Nav ─────────────────────────────────────────────── */}
-      <CaseStudyNav
-        primaryAction={{ label: 'Next project' }}
-        secondaryAction={{ label: 'Back' }}
-      />
+      <CaseStudyNav />
 
       {/* ── Header ──────────────────────────────────────────── */}
       <CaseStudyHeader
