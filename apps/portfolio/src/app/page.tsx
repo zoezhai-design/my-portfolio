@@ -1,4 +1,5 @@
 import { CaseStudyNav, HomeGrid } from '@my-portfolio/design-system';
+import { NavHistoryButtons } from '@/components/NavHistoryButtons';
 import { projects } from '@/data/projects';
 
 export default function HomePage() {
@@ -9,12 +10,12 @@ export default function HomePage() {
     category:    p.category,
     description: p.description,
     href:        `/work/${p.slug}`,
-    imageSrc:    undefined, // swap in real images per project
+    imageSrc:    undefined,
   }));
 
   return (
     <main>
-      <CaseStudyNav />
+      <CaseStudyNav historyButtons={<NavHistoryButtons />} />
       <HomeGrid items={items} />
     </main>
   );

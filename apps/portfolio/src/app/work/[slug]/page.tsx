@@ -6,6 +6,7 @@ import {
   GraphicX3,
   GraphicX4,
 } from '@my-portfolio/design-system';
+import { NavHistoryButtons } from '@/components/NavHistoryButtons';
 import { projects, getProjectBySlug } from '@/data/projects';
 import { notFound } from 'next/navigation';
 
@@ -24,7 +25,7 @@ export default function CaseStudyPage({ params }: PageProps) {
   return (
     <main className="ds-case-study">
       {/* ── Nav ─────────────────────────────────────────────── */}
-      <CaseStudyNav />
+      <CaseStudyNav historyButtons={<NavHistoryButtons />} />
 
       {/* ── Header ──────────────────────────────────────────── */}
       <CaseStudyHeader
