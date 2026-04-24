@@ -552,14 +552,12 @@
   gap: var(--space-12);
   padding: var(--space-48);
   background: var(--color-bg);
-  height: calc(100vh - 56px);
 }
 
 .home-grid__row {
   display: flex;
   gap: var(--space-12);
-  flex: 1;
-  min-height: 0;
+  height: calc((200vh - 120px) / 3);
 }
 
 /* Row 1 — large (3/4) + small (1/4) */
