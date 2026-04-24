@@ -203,6 +203,7 @@
   display: flex;
   gap: var(--space-4);
   align-items: center;
+  flex: 0 0 auto;
 }
 
 .ds-cs-nav__icon-btn {
@@ -223,64 +224,57 @@
   color: var(--color-text);
 }
 
-.ds-cs-nav__input {
+/* Address bar — centre zone */
+.ds-cs-nav__address {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
   width: 400px;
   height: 32px;
   background: var(--color-bg-subtle);
   border: 1px solid var(--color-border);
-  color: var(--color-text);
-  font-family: var(--font-sans);
-  font-size: var(--text-body-s);
-  line-height: var(--leading-body-s);
   padding: 0 var(--space-12);
-  border-radius: 0;
-  outline: none;
-  transition: border-color var(--duration-fast) var(--ease-out);
-}
-
-.ds-cs-nav__input::placeholder {
   color: var(--color-text-subtle);
 }
 
-.ds-cs-nav__input:focus {
-  border-color: var(--color-border-raised);
+.ds-cs-nav__address-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-l);
+  line-height: var(--leading-label-l);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-subtle);
+  letter-spacing: var(--tracking-label-l);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.ds-cs-nav__actions {
+/* Nav links — right zone */
+.ds-cs-nav__links {
   display: flex;
-  gap: var(--space-8);
+  gap: var(--space-4);
   align-items: center;
+  flex: 0 0 auto;
 }
 
-.ds-cs-nav__btn {
+.ds-cs-nav__link {
+  display: inline-flex;
+  align-items: center;
   height: 32px;
   padding: 0 var(--space-12);
   font-family: var(--font-sans);
   font-size: var(--text-label-xl);
   font-weight: var(--weight-medium);
-  border: none;
-  cursor: pointer;
-  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
-  border-radius: 0;
-}
-
-.ds-cs-nav__btn--primary {
-  background: var(--color-accent);
-  color: var(--color-accent-on);
-}
-
-.ds-cs-nav__btn--primary:hover {
-  background: var(--p-brand-300);
-}
-
-.ds-cs-nav__btn--secondary {
-  background: var(--color-surface-raised);
-  color: var(--color-text);
+  color: var(--color-text-subtle);
+  text-decoration: none;
   border: 1px solid var(--color-border);
+  background: transparent;
+  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 }
 
-.ds-cs-nav__btn--secondary:hover {
-  background: var(--color-surface-hover);
+.ds-cs-nav__link:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-raised);
 }
 
 /* ══════════════════════════
