@@ -1,5 +1,7 @@
 'use client';
 
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 export function NavHistoryButtons() {
   return (
     <>
@@ -9,7 +11,7 @@ export function NavHistoryButtons() {
         aria-label="Back"
         type="button"
       >
-        <ArrowLeft />
+        <ChevronLeft size={20} aria-hidden="true" />
       </button>
       <button
         className="ds-cs-nav__icon-btn"
@@ -17,24 +19,8 @@ export function NavHistoryButtons() {
         aria-label="Forward"
         type="button"
       >
-        <ArrowRight />
+        <ChevronRight size={20} aria-hidden="true" />
       </button>
     </>
-  );
-}
-
-function ArrowLeft() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M12.5 15L7.5 10l5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function ArrowRight() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M7.5 15l5-5-5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
   );
 }

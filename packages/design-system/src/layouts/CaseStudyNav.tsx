@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Code2, User } from 'lucide-react';
 import { Avatar } from '../components/Avatar';
 
 export interface CaseStudyNavProps {
@@ -23,8 +24,14 @@ export function CaseStudyNav({ avatarSrc, avatarAlt = 'Zoe Zhai', historyButtons
 
       {/* Right — nav links */}
       <div className="ds-cs-nav__links">
-        <a href="/work" className="ds-cs-nav__link">Artifacts</a>
-        <a href="/about" className="ds-cs-nav__link">About</a>
+        <a href="/work" className="ds-cs-nav__link">
+          <Code2 size={16} aria-hidden="true" />
+          Artifacts
+        </a>
+        <a href="/about" className="ds-cs-nav__link">
+          <User size={16} aria-hidden="true" />
+          About
+        </a>
       </div>
     </nav>
   );

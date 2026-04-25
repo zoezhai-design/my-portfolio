@@ -9,18 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@my-portfolio/design-system": "workspace:*",
+    "lucide-react": "^1.11.0",
     "next": "^14.2.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@my-portfolio/design-system": "workspace:*"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "typescript": "^5.4.5",
-    "tailwindcss": "^3.4.3",
+    "autoprefixer": "^10",
     "postcss": "^8",
-    "autoprefixer": "^10"
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   }
 }
