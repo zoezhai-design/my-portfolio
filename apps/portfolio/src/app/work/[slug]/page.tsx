@@ -53,11 +53,11 @@ export default function CaseStudyPage({ params }: PageProps) {
         ]}
       />
 
-      {/* ── Graphic X2 — two equal shots ────────────────────── */}
+      {/* ── Graphic X2 — two equal columns with label/body + image ── */}
       <GraphicX2
         images={[
-          { src: '', alt: 'Before state' },
-          { src: '', alt: 'After state' },
+          { src: '', alt: 'Before state', label: 'Before', body: 'The original experience before redesign.' },
+          { src: '', alt: 'After state',  label: 'After',  body: 'The redesigned experience post-launch.' },
         ]}
       />
 
