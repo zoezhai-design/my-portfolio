@@ -1,5 +1,4 @@
-import type { CSSProperties } from 'react';
-import { Chip } from '../components/Chip';
+import { Card } from '../components/Card';
 
 export interface HomeGridItem {
   number: string;
@@ -15,35 +14,6 @@ export interface HomeGridProps {
   items: HomeGridItem[];
 }
 
-function HomeCard({ item }: { item: HomeGridItem }) {
-  const style = item.imageSrc
-    ? ({ '--home-card-bg': `url(${item.imageSrc})` } as CSSProperties)
-    : undefined;
-
-  return (
-    <a href={item.href} className="home-card" style={style}>
-      {/* Full-bleed image layer — fades out on hover */}
-      <div className="home-card__bg" />
-      {/* Solid surface overlay — fades in on hover */}
-      <div className="home-card__overlay" />
-      {/* Content — flex-end anchors everything to the bottom */}
-      <div className="home-card__content">
-        <h2 className="home-card__title">{item.title}</h2>
-        {/* Meta: chips + description — collapse to 0 height, fade in on hover */}
-        <div className="home-card__meta">
-          <div className="home-card__meta-inner">
-            <div className="home-card__chips">
-              <Chip label={item.type} />
-              <Chip label={item.category} />
-            </div>
-            <p className="home-card__desc">{item.description}</p>
-          </div>
-        </div>
-      </div>
-    </a>
-  );
-}
-
 /**
  * Three-row masonry grid — matches Figma "Home" layout block (257:1768).
  * Expects exactly 8 items.
@@ -57,18 +27,18 @@ export function HomeGrid({ items }: HomeGridProps) {
   return (
     <div className="home-grid">
       <div className="home-grid__row home-grid__row--r1">
-        {c1 && <HomeCard item={c1} />}
-        {c2 && <HomeCard item={c2} />}
+        {c1 && <Card title={c1.title} type={c1.type} category={c1.category} description={c1.description} href={c1.href} imageSrc={c1.imageSrc} />}
+        {c2 && <Card title={c2.title} type={c2.type} category={c2.category} description={c2.description} href={c2.href} imageSrc={c2.imageSrc} />}
       </div>
       <div className="home-grid__row home-grid__row--r2">
-        {c3 && <HomeCard item={c3} />}
-        {c4 && <HomeCard item={c4} />}
-        {c5 && <HomeCard item={c5} />}
+        {c3 && <Card title={c3.title} type={c3.type} category={c3.category} description={c3.description} href={c3.href} imageSrc={c3.imageSrc} />}
+        {c4 && <Card title={c4.title} type={c4.type} category={c4.category} description={c4.description} href={c4.href} imageSrc={c4.imageSrc} />}
+        {c5 && <Card title={c5.title} type={c5.type} category={c5.category} description={c5.description} href={c5.href} imageSrc={c5.imageSrc} />}
       </div>
       <div className="home-grid__row home-grid__row--r3">
-        {c6 && <HomeCard item={c6} />}
-        {c7 && <HomeCard item={c7} />}
-        {c8 && <HomeCard item={c8} />}
+        {c6 && <Card title={c6.title} type={c6.type} category={c6.category} description={c6.description} href={c6.href} imageSrc={c6.imageSrc} />}
+        {c7 && <Card title={c7.title} type={c7.type} category={c7.category} description={c7.description} href={c7.href} imageSrc={c7.imageSrc} />}
+        {c8 && <Card title={c8.title} type={c8.type} category={c8.category} description={c8.description} href={c8.href} imageSrc={c8.imageSrc} />}
       </div>
     </div>
   );

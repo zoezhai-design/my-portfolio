@@ -2,10 +2,12 @@ export { Nav }    from './components/Nav';
 export { Card }   from './components/Card';
 export { Chip }   from './components/Chip';
 export { Avatar } from './components/Avatar';
+export { Image }  from './components/Image';
 
 export type { CardProps }   from './components/Card';
 export type { ChipProps }   from './components/Chip';
 export type { AvatarProps } from './components/Avatar';
+export type { ImageProps }  from './components/Image';
 
 export { CaseStudyNav }    from './layouts/CaseStudyNav';
 export { CaseStudyHeader } from './layouts/CaseStudyHeader';

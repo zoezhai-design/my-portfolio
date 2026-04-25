@@ -1,3 +1,5 @@
+import { Image } from '../components/Image';
+
 export interface GraphicX2Image {
   src?: string;
   alt?: string;
@@ -14,9 +16,7 @@ export function GraphicX2({ images }: GraphicX2Props) {
       <div className="ds-graphic__content">
         {images.map((img, i) => (
           <div key={i} className="ds-graphic__image">
-            {img.src
-              ? <img src={img.src} alt={img.alt ?? ''} className="ds-graphic__img" />
-              : <div className="ds-graphic__placeholder" />}
+            <Image src={img.src} alt={img.alt} />
           </div>
         ))}
       </div>
