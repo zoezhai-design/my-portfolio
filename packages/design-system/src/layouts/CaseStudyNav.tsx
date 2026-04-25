@@ -14,7 +14,7 @@ export function CaseStudyNav({ avatarSrc, avatarAlt = 'Zoe Zhai', historyButtons
       {/* Left — avatar + history buttons slot */}
       <div className="ds-cs-nav__left">
         <a href="/" className="ds-cs-nav__avatar-link" aria-label="Home">
-          <Avatar src={avatarSrc} alt={avatarAlt} size="medium" initials="ZZ" />
+          <Avatar src={avatarSrc} alt={avatarAlt} size="xl" initials="ZZ" />
         </a>
         {historyButtons && (
           <div className="ds-cs-nav__history">{historyButtons}</div>

@@ -29,37 +29,29 @@ export default function CaseStudyPage({ params }: PageProps) {
 
       {/* ── Header ──────────────────────────────────────────── */}
       <CaseStudyHeader
-        projectNumber="01"
+        projectNumber="1.0"
         title={project.title}
         description={project.description}
-        labels={[
-          { name: 'Type',   value: project.type },
-          { name: 'Date',   value: '2024' },
-          { name: 'Impact', value: '+32% task completion rate' },
-          { name: 'Team',   value: '1 PM · 2 Eng · 1 Researcher' },
-        ]}
-      >
-        <p className="ds-cs-body">
-          This case study documents the end-to-end design process — from initial discovery
-          and problem framing through to iterative prototyping, usability testing,
-          and final handoff. The outcome is a system that scales across teams and surfaces
-          the right information at the right moment.
-        </p>
-      </CaseStudyHeader>
+        projectType={project.type}
+        client={project.type}
+        date="2024"
+        impactText="+32% task completion rate across all user segments"
+        team={{
+          role: 'Senior Product Designer',
+          collaboration: ['Tianxu Zhang', 'Scott So', 'David Boddy'],
+          org: 'Global supply team',
+        }}
+      />
 
       {/* ── Graphic X1 — hero image + context labels ────────── */}
-      <GraphicX1 imageSrc="" imageAlt="Hero screenshot">
-        <div className="ds-cs-side-labels">
-          <div className="ds-cs-side-label">
-            <span className="ds-cs-side-label__name">Platform</span>
-            <span className="ds-cs-side-label__value">{project.type}</span>
-          </div>
-          <div className="ds-cs-side-label">
-            <span className="ds-cs-side-label__name">Scope</span>
-            <span className="ds-cs-side-label__value">End-to-end product design</span>
-          </div>
-        </div>
-      </GraphicX1>
+      <GraphicX1
+        imageSrc=""
+        imageAlt="Hero screenshot"
+        sections={[
+          { label: 'Platform', body: project.type },
+          { label: 'Scope', body: 'End-to-end product design' },
+        ]}
+      />
 
       {/* ── Graphic X2 — two equal shots ────────────────────── */}
       <GraphicX2
@@ -72,19 +64,19 @@ export default function CaseStudyPage({ params }: PageProps) {
       {/* ── Graphic X3 — three annotated screens ────────────── */}
       <GraphicX3
         images={[
-          { src: '', alt: 'Discovery', label: 'Discovery' },
-          { src: '', alt: 'Exploration', label: 'Exploration' },
-          { src: '', alt: 'Final design', label: 'Final design' },
+          { src: '', alt: 'Discovery',    caption: 'Discovery' },
+          { src: '', alt: 'Exploration',  caption: 'Exploration' },
+          { src: '', alt: 'Final design', caption: 'Final design' },
         ]}
       />
 
       {/* ── Graphic X4 — four detail shots ──────────────────── */}
       <GraphicX4
         images={[
-          { src: '', alt: 'Component A', label: 'Component A' },
-          { src: '', alt: 'Component B', label: 'Component B' },
-          { src: '', alt: 'Component C', label: 'Component C' },
-          { src: '', alt: 'Component D', label: 'Component D' },
+          { src: '', alt: 'Component A', caption: 'Component A' },
+          { src: '', alt: 'Component B', caption: 'Component B' },
+          { src: '', alt: 'Component C', caption: 'Component C' },
+          { src: '', alt: 'Component D', caption: 'Component D' },
         ]}
       />
     </main>
