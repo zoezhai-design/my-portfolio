@@ -1,0 +1,39 @@
+{
+  "project": {
+    "title": "AI Enterprise Support",
+    "slug": "ai-resolution-center",
+    "category": "Marketplace Product",
+    "role": "Senior Product Designer",
+    "team": "Global Supply",
+    "year": "2025 Q4",
+    "status": "Shipped",
+    "impact": [
+      "Reduced average response time by 67%",
+      "Improved first-contact resolution rate from 38% to 71%",
+      "AI resolved 65% of tickets without human escalation"
+    ]
+  },
+  "blocks": [
+    {
+      "block": "GraphicLayoutX4",
+      "items": [
+        {
+          "image": "diagram-01.png",
+          "body": "Step 1 • Current State • enterprise support interface like Shopify lead with AI to cut costs and bury human access, a reasonable tradeoff for consumer facing product, but a dangerous one for enterprise where unresolved tickets mean real revenue loss."
+        },
+        {
+          "image": "diagram-02.png",
+          "body": "Rethinking the Landscape • By inverting the model, making AI the always-accessible floating layer and gating human agents exclusively to the support center, we reduce cost, increase response speed, and ensure AI operates with the domain context it needs to actually solve problems."
+        },
+        {
+          "image": "diagram-03.png",
+          "body": "AI as a Plugin • Extending the AI floating chat beyond the support center into every core product page means help is delivered in-context, at the exact moment a user encounters friction."
+        },
+        {
+          "image": "diagram-04.png",
+          "body": "Ticket Management • Enterprise users juggle many concurrent tickets opened and monitored by different people, so surfacing a persistent side panel of ticket cards gives teams instant visibility and fast context-switching without losing their place."
+        }
+      ]
+    }
+  ]
+}
