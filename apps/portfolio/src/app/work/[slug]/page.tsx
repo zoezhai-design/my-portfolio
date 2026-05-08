@@ -62,19 +62,19 @@ export default function CaseStudyPage({ params }: PageProps) {
       {/* ── Graphic X3 — three annotated screens ────────────── */}
       <GraphicX3
         images={[
-          { src: '', alt: 'Discovery',    caption: 'Discovery' },
-          { src: '', alt: 'Exploration',  caption: 'Exploration' },
-          { src: '', alt: 'Final design', caption: 'Final design' },
+          { src: '', alt: 'Discovery',    label: 'Discovery' },
+          { src: '', alt: 'Exploration',  label: 'Exploration' },
+          { src: '', alt: 'Final design', label: 'Final design' },
         ]}
       />
 
       {/* ── Graphic X4 — four detail shots ──────────────────── */}
       <GraphicX4
         images={[
-          { src: '', alt: 'Component A', caption: 'Component A' },
-          { src: '', alt: 'Component B', caption: 'Component B' },
-          { src: '', alt: 'Component C', caption: 'Component C' },
-          { src: '', alt: 'Component D', caption: 'Component D' },
+          { src: '', alt: 'Component A', label: 'Component A' },
+          { src: '', alt: 'Component B', label: 'Component B' },
+          { src: '', alt: 'Component C', label: 'Component C' },
+          { src: '', alt: 'Component D', label: 'Component D' },
         ]}
       />
     </main>

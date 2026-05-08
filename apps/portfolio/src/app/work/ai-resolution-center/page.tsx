@@ -38,26 +38,26 @@ export default function AiResolutionCenterPage() {
           {
             src: `${BASE}/diagram-01.png`,
             alt: 'Current state — enterprise support interface',
-            caption:
-              'Step 1 · Current State · Enterprise support interfaces like Shopify lead with AI to cut costs and bury human access — a reasonable tradeoff for consumer products, but dangerous for enterprise where unresolved tickets mean real revenue loss.',
+            label: 'Step 1 · Current State',
+            body: 'Enterprise support interfaces like Shopify lead with AI to cut costs and bury human access — a reasonable tradeoff for consumer products, but dangerous for enterprise where unresolved tickets mean real revenue loss.',
           },
           {
             src: `${BASE}/diagram-02.png`,
             alt: 'Rethinking the landscape — inverted support model',
-            caption:
-              'Rethinking the Landscape · By inverting the model — making AI the always-accessible floating layer and gating human agents exclusively to the support centre — we reduce cost, increase response speed, and ensure AI operates with the domain context it needs.',
+            label: 'Rethinking the Landscape',
+            body: 'By inverting the model — making AI the always-accessible floating layer and gating human agents exclusively to the support centre — we reduce cost, increase response speed, and ensure AI operates with the domain context it needs.',
           },
           {
             src: `${BASE}/diagram-03.png`,
             alt: 'AI as a plugin — in-context help across product pages',
-            caption:
-              'AI as a Plugin · Extending the AI floating chat beyond the support centre into every core product page means help is delivered in-context, at the exact moment a user encounters friction.',
+            label: 'AI as a Plugin',
+            body: 'Extending the AI floating chat beyond the support centre into every core product page means help is delivered in-context, at the exact moment a user encounters friction.',
           },
           {
             src: `${BASE}/diagram-04.png`,
             alt: 'Ticket management — persistent side panel',
-            caption:
-              'Ticket Management · Enterprise users juggle many concurrent tickets opened and monitored by different people, so surfacing a persistent side panel of ticket cards gives teams instant visibility and fast context-switching without losing their place.',
+            label: 'Ticket Management',
+            body: 'Enterprise users juggle many concurrent tickets opened and monitored by different people, so surfacing a persistent side panel of ticket cards gives teams instant visibility and fast context-switching without losing their place.',
           },
         ]}
       />
