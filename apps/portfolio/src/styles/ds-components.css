@@ -507,31 +507,40 @@
   background: var(--color-bg);
 }
 
+/* All graphic layouts: unified 4-column grid */
 .ds-graphic__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-}
-
-/* X1 — equal halves: image left, text right */
-.ds-graphic--x1 > .ds-graphic__content {
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-24);
-  align-items: flex-start;
 }
 
-.ds-graphic--x1 .ds-graphic__image--half {
-  flex: 1;
-  min-width: 0;
+/* X1: image spans cols 1–3, text panel auto-places in col 4 */
+.ds-graphic--x1 .ds-graphic__image {
+  grid-column: 1 / span 3;
+  align-self: start;
 }
 
-.ds-graphic--x1 .ds-graphic__text {
-  flex: 1;
-  min-width: 0;
+/* X2: first image column spans 2 cols */
+.ds-graphic__col--wide {
+  grid-column: span 2;
+}
+
+/* Image columns (X2 / X3 / X4): label+body stacked above image */
+.ds-graphic__col {
   display: flex;
   flex-direction: column;
+  gap: var(--space-24);
+  align-self: start;
 }
 
+/* Right text panel (col 4 in X1 / X2 / X3) */
+.ds-graphic__text {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+/* Section — used in X1 text panel and X2 per-image text (bordered label) */
 .ds-graphic__section {
   display: flex;
   flex-direction: column;
@@ -563,33 +572,7 @@
   padding: var(--space-8) 0;
 }
 
-/* X2 — two equal images */
-.ds-graphic--x2 > .ds-graphic__content {
-  flex-direction: row;
-  gap: var(--space-24);
-}
-
-.ds-graphic__col {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-24);
-}
-
-.ds-graphic__image--tall {
-  width: 100%;
-}
-
-/* X2 / X3 / X4 — column layout: label + body + image per column */
-.ds-graphic--x2 > .ds-graphic__content,
-.ds-graphic--x3 > .ds-graphic__content,
-.ds-graphic--x4 > .ds-graphic__content {
-  flex-direction: row;
-  gap: var(--space-24);
-}
-
-/* Subtle stacked label + body (no border — used in X3, X4) */
+/* Item text — used in X3 / X4 per-image text (no border, label subtle, body normal) */
 .ds-graphic__item-text {
   display: flex;
   flex-direction: column;
@@ -610,7 +593,7 @@
   font-size: var(--text-label-xl);
   line-height: var(--leading-label-xl);
   font-weight: var(--weight-regular);
-  color: var(--color-text-subtle);
+  color: var(--color-text);
   margin: 0;
 }
 

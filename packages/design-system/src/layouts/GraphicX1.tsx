@@ -20,7 +20,7 @@ export function GraphicX1({ imageSrc, imageAlt = '', section1, section2 }: Graph
   return (
     <section className="ds-graphic ds-graphic--x1">
       <div className="ds-graphic__content">
-        <div className="ds-graphic__image ds-graphic__image--half">
+        <div className="ds-graphic__image">
           <Image src={imageSrc} alt={imageAlt} />
         </div>
         {(section1 || section2) && (
