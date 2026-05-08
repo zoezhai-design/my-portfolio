@@ -513,19 +513,21 @@
   gap: var(--space-12);
 }
 
-/* X1 — large image + text panel */
+/* X1 — equal halves: image left, text right */
 .ds-graphic--x1 > .ds-graphic__content {
   flex-direction: row;
-  gap: var(--space-48);
+  gap: var(--space-24);
   align-items: flex-start;
 }
 
-.ds-graphic--x1 .ds-graphic__image--large {
-  flex: 0 0 58%;
+.ds-graphic--x1 .ds-graphic__image--half {
+  flex: 1;
+  min-width: 0;
 }
 
 .ds-graphic--x1 .ds-graphic__text {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
@@ -533,6 +535,7 @@
 .ds-graphic__section {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 .ds-graphic__section--grow {
@@ -541,23 +544,23 @@
 
 .ds-graphic__section-label {
   font-family: var(--font-sans);
-  font-size: var(--text-label-2xl);
-  line-height: var(--leading-label-2xl);
-  font-weight: var(--weight-medium);
+  font-size: var(--text-label-xl);
+  line-height: var(--leading-label-xl);
+  font-weight: var(--weight-semibold);
   color: var(--color-text-subtle);
   text-transform: uppercase;
-  padding: var(--space-12) 0;
+  padding: var(--space-8) 0;
   border-bottom: 1px solid var(--color-border);
   white-space: nowrap;
 }
 
 .ds-graphic__section-body {
   font-family: var(--font-sans);
-  font-size: var(--text-body-l);
-  line-height: var(--leading-body-l);
+  font-size: var(--text-label-xl);
+  line-height: var(--leading-label-xl);
   font-weight: var(--weight-regular);
   color: var(--color-text);
-  padding: var(--space-12) 0;
+  padding: var(--space-8) 0;
 }
 
 /* X2 — two equal images */

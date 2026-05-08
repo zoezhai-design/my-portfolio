@@ -43,14 +43,12 @@ export default function CaseStudyPage({ params }: PageProps) {
         }}
       />
 
-      {/* ── Graphic X1 — hero image + context labels ────────── */}
+      {/* ── Graphic X1 — image left, label+body right ──────── */}
       <GraphicX1
         imageSrc=""
         imageAlt="Hero screenshot"
-        sections={[
-          { label: 'Platform', body: project.type },
-          { label: 'Scope', body: 'End-to-end product design' },
-        ]}
+        section1={{ label: 'Platform', body: project.type }}
+        section2={{ body: 'End-to-end product design' }}
       />
 
       {/* ── Graphic X2 — two equal columns with label/body + image ── */}
