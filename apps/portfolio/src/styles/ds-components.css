@@ -459,9 +459,7 @@
 }
 
 .ds-cs-header__image {
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+  width: 100%;
 }
 
 .ds-cs-header__body-right {
@@ -519,13 +517,11 @@
 .ds-graphic--x1 > .ds-graphic__content {
   flex-direction: row;
   gap: var(--space-48);
-  align-items: stretch;
-  height: 600px;
+  align-items: flex-start;
 }
 
 .ds-graphic--x1 .ds-graphic__image--large {
   flex: 0 0 58%;
-  overflow: hidden;
 }
 
 .ds-graphic--x1 .ds-graphic__text {
@@ -537,12 +533,10 @@
 .ds-graphic__section {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
 }
 
 .ds-graphic__section--grow {
   flex: 1;
-  min-height: 0;
 }
 
 .ds-graphic__section-label {
@@ -581,8 +575,7 @@
 }
 
 .ds-graphic__image--tall {
-  height: 600px;
-  overflow: hidden;
+  width: 100%;
 }
 
 /* X3 / X4 — caption row above images */
@@ -614,8 +607,7 @@
 .ds-graphic--x3 .ds-graphic__images .ds-graphic__image,
 .ds-graphic--x4 .ds-graphic__images .ds-graphic__image {
   flex: 1;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
+  min-width: 0;
 }
 
 /* ══════════════════════════
@@ -704,25 +696,19 @@
    ══════════════════════════ */
 
 .ds-image {
-  position: relative;
   width: 100%;
-  height: 100%;
   display: block;
-  overflow: hidden;
   background: var(--color-surface-raised);
 }
 
 .ds-image__img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
 .ds-image__placeholder {
-  position: absolute;
-  inset: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   background: var(--color-surface-raised);
 }
