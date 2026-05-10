@@ -459,9 +459,7 @@
 }
 
 .ds-cs-header__image {
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+  width: 100%;
 }
 
 .ds-cs-header__body-right {
@@ -509,56 +507,43 @@
   background: var(--color-bg);
 }
 
+/* All graphic layouts: unified 4-column grid */
 .ds-graphic__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-24);
+}
+
+/* X1: image spans cols 1–3, text panel auto-places in col 4 */
+.ds-graphic--x1 .ds-graphic__image {
+  grid-column: 1 / span 3;
+  align-self: start;
+}
+
+/* X2: explicit grid placement for 2-row layout
+   row 1 — text 1 (col 1), text 2 (cols 3-4)
+   row 2 — image 1 (cols 1-2), image 2 (cols 3-4) */
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(1) { grid-column: 1; }
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(2) { grid-column: 3 / span 2; }
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(3) { grid-column: 1 / span 2; }
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(4) { grid-column: 3 / span 2; }
+
+/* Image columns (X3): label+body stacked above image */
+.ds-graphic__col {
   display: flex;
   flex-direction: column;
-  gap: var(--space-12);
+  gap: var(--space-24);
+  align-self: start;
 }
 
-.ds-graphic__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.ds-graphic__placeholder {
-  width: 100%;
-  height: 100%;
-  background: var(--color-surface-raised);
-  min-height: 400px;
-}
-
-.ds-graphic__label {
-  font-family: var(--font-sans);
-  font-size: var(--text-label-l);
-  line-height: var(--leading-label-l);
-  font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-label-l);
-  color: var(--color-text-subtle);
-}
-
-/* X1 — large image + text panel */
-.ds-graphic--x1 > .ds-graphic__content {
-  flex-direction: row;
-  gap: var(--space-48);
-  align-items: center;
-  min-height: 600px;
-}
-
-.ds-graphic--x1 .ds-graphic__image--large {
-  flex: 0 0 58%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.ds-graphic--x1 .ds-graphic__text {
-  flex: 1;
+/* Right text panel (col 4 in X1 / X3) */
+.ds-graphic__text {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-self: stretch;
 }
 
+/* Section — used in X1 text panel and X2 per-image text (bordered label) */
 .ds-graphic__section {
   display: flex;
   flex-direction: column;
@@ -567,80 +552,52 @@
 
 .ds-graphic__section--grow {
   flex: 1;
-  min-height: 0;
 }
 
 .ds-graphic__section-label {
   font-family: var(--font-sans);
-  font-size: var(--text-label-2xl);
-  line-height: var(--leading-label-2xl);
-  font-weight: var(--weight-medium);
+  font-size: var(--text-label-xl);
+  line-height: var(--leading-label-xl);
+  font-weight: var(--weight-semibold);
   color: var(--color-text-subtle);
   text-transform: uppercase;
-  padding: var(--space-12) 0;
+  padding: var(--space-8) 0;
   border-bottom: 1px solid var(--color-border);
   white-space: nowrap;
 }
 
 .ds-graphic__section-body {
   font-family: var(--font-sans);
-  font-size: var(--text-body-l);
-  line-height: var(--leading-body-l);
+  font-size: var(--text-label-xl);
+  line-height: var(--leading-label-xl);
   font-weight: var(--weight-regular);
   color: var(--color-text);
-  padding: var(--space-12) 0;
+  padding: var(--space-8) 0;
 }
 
-/* X2 — two equal images */
-.ds-graphic--x2 > .ds-graphic__content {
-  flex-direction: row;
-  gap: var(--space-24);
-}
-
-.ds-graphic__col {
-  flex: 1;
-  min-width: 0;
+/* Item text — used in X3 / X4 per-image text (no border, label subtle, body normal) */
+.ds-graphic__item-text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-24);
+  flex-shrink: 0;
 }
 
-.ds-graphic__image--tall {
-  height: 600px;
-  overflow: hidden;
-}
-
-/* X3 / X4 — caption row above images */
-.ds-graphic__captions {
-  display: flex;
-  gap: var(--space-12);
-}
-
-.ds-graphic__caption-cell {
-  flex: 1;
-  padding: var(--space-12) 0;
-  min-width: 0;
-}
-
-.ds-graphic__caption {
+.ds-graphic__item-label {
   font-family: var(--font-sans);
-  font-size: var(--text-body-l);
-  line-height: var(--leading-body-l);
-  font-weight: var(--weight-regular);
+  font-size: var(--text-label-xl);
+  line-height: var(--leading-label-xl);
+  font-weight: var(--weight-semibold);
   color: var(--color-text-subtle);
   margin: 0;
 }
 
-.ds-graphic__images {
-  display: flex;
-  gap: var(--space-12);
-}
-
-.ds-graphic--x3 .ds-graphic__images .ds-graphic__image,
-.ds-graphic--x4 .ds-graphic__images .ds-graphic__image {
-  flex: 1;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
+.ds-graphic__item-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-xl);
+  line-height: var(--leading-label-xl);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  margin: 0;
 }
 
 /* ══════════════════════════
@@ -730,20 +687,18 @@
 
 .ds-image {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  display: block;
   background: var(--color-surface-raised);
 }
 
 .ds-image__img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
 .ds-image__placeholder {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   background: var(--color-surface-raised);
 }

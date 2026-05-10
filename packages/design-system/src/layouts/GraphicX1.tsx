@@ -1,34 +1,43 @@
 import { Image } from '../components/Image';
 
 export interface GraphicX1Section {
-  label: string;
+  label?: string;
   body: string;
 }
 
 export interface GraphicX1Props {
   imageSrc?: string;
   imageAlt?: string;
-  sections?: [GraphicX1Section, GraphicX1Section];
+  /** Section 1 — label + body, fills top of text panel */
+  section1?: GraphicX1Section;
+  /** Section 2 — body only, pinned to bottom of text panel */
+  section2?: GraphicX1Section;
 }
 
-/** Large image (left ~60%) + two labeled body sections (right) */
-export function GraphicX1({ imageSrc, imageAlt = '', sections }: GraphicX1Props) {
+/** Equal halves: image left, text panel right.
+ *  Text panel: section1 (label+body, flex-1) on top, section2 (body only) at bottom. */
+export function GraphicX1({ imageSrc, imageAlt = '', section1, section2 }: GraphicX1Props) {
   return (
     <section className="ds-graphic ds-graphic--x1">
       <div className="ds-graphic__content">
-        <div className="ds-graphic__image ds-graphic__image--large">
+        <div className="ds-graphic__image">
           <Image src={imageSrc} alt={imageAlt} />
         </div>
-        {sections && (
+        {(section1 || section2) && (
           <div className="ds-graphic__text">
-            <div className="ds-graphic__section ds-graphic__section--grow">
-              <div className="ds-graphic__section-label">{sections[0].label}</div>
-              <div className="ds-graphic__section-body">{sections[0].body}</div>
-            </div>
-            <div className="ds-graphic__section">
-              <div className="ds-graphic__section-label">{sections[1].label}</div>
-              <div className="ds-graphic__section-body">{sections[1].body}</div>
-            </div>
+            {section1 && (
+              <div className="ds-graphic__section ds-graphic__section--grow">
+                {section1.label && (
+                  <div className="ds-graphic__section-label">{section1.label}</div>
+                )}
+                <div className="ds-graphic__section-body">{section1.body}</div>
+              </div>
+            )}
+            {section2 && (
+              <div className="ds-graphic__section">
+                <div className="ds-graphic__section-body">{section2.body}</div>
+              </div>
+            )}
           </div>
         )}
       </div>

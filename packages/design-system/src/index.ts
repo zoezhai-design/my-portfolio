@@ -22,5 +22,5 @@ export type { CaseStudyHeaderProps, CaseStudyHeaderTeam }                       
 export type { HomeGridProps, HomeGridItem }                                               from './layouts/HomeGrid';
 export type { GraphicX1Props, GraphicX1Section }                                         from './layouts/GraphicX1';
 export type { GraphicX2Props, GraphicX2Image }                                           from './layouts/GraphicX2';
-export type { GraphicX3Props, GraphicX3Image }                                           from './layouts/GraphicX3';
+export type { GraphicX3Props, GraphicX3Image, GraphicX3Section }                        from './layouts/GraphicX3';
 export type { GraphicX4Props, GraphicX4Image }                                           from './layouts/GraphicX4';

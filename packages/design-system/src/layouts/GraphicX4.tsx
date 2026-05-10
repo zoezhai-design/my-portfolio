@@ -3,34 +3,34 @@ import { Image } from '../components/Image';
 export interface GraphicX4Image {
   src?: string;
   alt?: string;
-  caption?: string;
+  label?: string;
+  body?: string;
 }
 
 export interface GraphicX4Props {
   images: [GraphicX4Image, GraphicX4Image, GraphicX4Image, GraphicX4Image];
 }
 
-/** Four equal images with optional caption text above each column */
+/**
+ * 4-column grid, 2 rows:
+ * Row 1 — label + body text for each column
+ * Row 2 — image for each column
+ */
 export function GraphicX4({ images }: GraphicX4Props) {
   return (
     <section className="ds-graphic ds-graphic--x4">
       <div className="ds-graphic__content">
-        {images.some((img) => img.caption) && (
-          <div className="ds-graphic__captions">
-            {images.map((img, i) => (
-              <div key={i} className="ds-graphic__caption-cell">
-                {img.caption && <p className="ds-graphic__caption">{img.caption}</p>}
-              </div>
-            ))}
+        {/* Row 1: text labels */}
+        {images.map((img, i) => (
+          <div key={`text-${i}`} className="ds-graphic__item-text">
+            {img.label && <p className="ds-graphic__item-label">{img.label}</p>}
+            {img.body  && <p className="ds-graphic__item-body">{img.body}</p>}
           </div>
-        )}
-        <div className="ds-graphic__images">
-          {images.map((img, i) => (
-            <div key={i} className="ds-graphic__image">
-              <Image src={img.src} alt={img.alt} />
-            </div>
-          ))}
-        </div>
+        ))}
+        {/* Row 2: images */}
+        {images.map((img, i) => (
+          <Image key={`img-${i}`} src={img.src} alt={img.alt} />
+        ))}
       </div>
     </section>
   );

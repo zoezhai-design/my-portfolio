@@ -12,6 +12,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'ai-resolution-center',
+    title: 'AI Enterprise Support',
+    type: 'Desktop',
+    category: 'Marketplace Product',
+    description: 'Inverting the enterprise support model — AI as an always-accessible floating layer, human agents reserved for the support centre, tickets resolved faster with less escalation.',
+    tags: ['AI', 'Enterprise', 'Support', 'B2B'],
+  },
+  {
     slug: 'ai-support',
     title: 'AI Support',
     type: 'Desktop',

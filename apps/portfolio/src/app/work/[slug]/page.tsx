@@ -43,14 +43,12 @@ export default function CaseStudyPage({ params }: PageProps) {
         }}
       />
 
-      {/* ── Graphic X1 — hero image + context labels ────────── */}
+      {/* ── Graphic X1 — image left, label+body right ──────── */}
       <GraphicX1
         imageSrc=""
         imageAlt="Hero screenshot"
-        sections={[
-          { label: 'Platform', body: project.type },
-          { label: 'Scope', body: 'End-to-end product design' },
-        ]}
+        section1={{ label: 'Platform', body: project.type }}
+        section2={{ body: 'End-to-end product design' }}
       />
 
       {/* ── Graphic X2 — two equal columns with label/body + image ── */}
@@ -64,19 +62,19 @@ export default function CaseStudyPage({ params }: PageProps) {
       {/* ── Graphic X3 — three annotated screens ────────────── */}
       <GraphicX3
         images={[
-          { src: '', alt: 'Discovery',    caption: 'Discovery' },
-          { src: '', alt: 'Exploration',  caption: 'Exploration' },
-          { src: '', alt: 'Final design', caption: 'Final design' },
+          { src: '', alt: 'Discovery',    label: 'Discovery' },
+          { src: '', alt: 'Exploration',  label: 'Exploration' },
+          { src: '', alt: 'Final design', label: 'Final design' },
         ]}
       />
 
       {/* ── Graphic X4 — four detail shots ──────────────────── */}
       <GraphicX4
         images={[
-          { src: '', alt: 'Component A', caption: 'Component A' },
-          { src: '', alt: 'Component B', caption: 'Component B' },
-          { src: '', alt: 'Component C', caption: 'Component C' },
-          { src: '', alt: 'Component D', caption: 'Component D' },
+          { src: '', alt: 'Component A', label: 'Component A' },
+          { src: '', alt: 'Component B', label: 'Component B' },
+          { src: '', alt: 'Component C', label: 'Component C' },
+          { src: '', alt: 'Component D', label: 'Component D' },
         ]}
       />
     </main>
