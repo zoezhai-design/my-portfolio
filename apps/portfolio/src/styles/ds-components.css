@@ -520,12 +520,15 @@
   align-self: start;
 }
 
-/* X2: first image column spans 2 cols */
-.ds-graphic__col--wide {
-  grid-column: span 2;
-}
+/* X2: explicit grid placement for 2-row layout
+   row 1 — text 1 (col 1), text 2 (cols 3-4)
+   row 2 — image 1 (cols 1-2), image 2 (cols 3-4) */
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(1) { grid-column: 1; }
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(2) { grid-column: 3 / span 2; }
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(3) { grid-column: 1 / span 2; }
+.ds-graphic--x2 .ds-graphic__content > *:nth-child(4) { grid-column: 3 / span 2; }
 
-/* Image columns (X2 / X3 / X4): label+body stacked above image */
+/* Image columns (X3): label+body stacked above image */
 .ds-graphic__col {
   display: flex;
   flex-direction: column;
@@ -533,7 +536,7 @@
   align-self: start;
 }
 
-/* Right text panel (col 4 in X1 / X2 / X3) */
+/* Right text panel (col 4 in X1 / X3) */
 .ds-graphic__text {
   display: flex;
   flex-direction: column;
