@@ -1,9 +1,17 @@
 import {
   CaseStudyNav,
   CaseStudyHeader,
+  GraphicX1,
+  GraphicX2,
+  GraphicX3,
   GraphicX4,
+  DiagramX1,
+  TextX1,
+  TextX2,
+  TextX4,
 } from '@my-portfolio/design-system';
 import { NavHistoryButtons } from '@/components/NavHistoryButtons';
+import content from '../../../../content/ai-resolution-center.content.json';
 
 export const metadata = {
   title: 'AI Enterprise Support — Zoe Zhai',
@@ -13,6 +21,118 @@ export const metadata = {
 
 const BASE = '/projects/ai-resolution-center';
 
+function img(filename: string) {
+  return filename ? `${BASE}/${filename}` : undefined;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function renderBlock(block: any, index: number) {
+  switch (block.block) {
+    case 'GraphicLayoutX1':
+      return (
+        <GraphicX1
+          key={index}
+          imageSrc={img(block.image)}
+          imageAlt={block.alt ?? ''}
+          section1={block.section1}
+          section2={block.section2}
+        />
+      );
+
+    case 'GraphicLayoutX2': {
+      const [a, b] = block.items ?? [];
+      return (
+        <GraphicX2
+          key={index}
+          images={[
+            { src: img(a?.image), alt: a?.alt ?? '', label: a?.label, body: a?.body },
+            { src: img(b?.image), alt: b?.alt ?? '', label: b?.label, body: b?.body },
+          ]}
+        />
+      );
+    }
+
+    case 'GraphicLayoutX3': {
+      const [a, b, c] = block.items ?? [];
+      return (
+        <GraphicX3
+          key={index}
+          images={[
+            { src: img(a?.image), alt: a?.alt ?? '', label: a?.label, body: a?.body },
+            { src: img(b?.image), alt: b?.alt ?? '', label: b?.label, body: b?.body },
+            { src: img(c?.image), alt: c?.alt ?? '', label: c?.label, body: c?.body },
+          ]}
+          section1={block.section1}
+          section2={block.section2}
+        />
+      );
+    }
+
+    case 'GraphicLayoutX4': {
+      const [a, b, c, d] = block.items ?? [];
+      return (
+        <GraphicX4
+          key={index}
+          images={[
+            { src: img(a?.image), alt: a?.alt ?? '', label: a?.label, body: a?.body },
+            { src: img(b?.image), alt: b?.alt ?? '', label: b?.label, body: b?.body },
+            { src: img(c?.image), alt: c?.alt ?? '', label: c?.label, body: c?.body },
+            { src: img(d?.image), alt: d?.alt ?? '', label: d?.label, body: d?.body },
+          ]}
+        />
+      );
+    }
+
+    case 'DiagramX1':
+      return (
+        <DiagramX1
+          key={index}
+          imageSrc={img(block.image)}
+          imageAlt={block.alt ?? ''}
+          caption={block.caption}
+        />
+      );
+
+    case 'TextX1':
+      return <TextX1 key={index} title={block.title} body={block.body} />;
+
+    case 'TextX2': {
+      const [s1, s2] = block.sections ?? [];
+      return (
+        <TextX2
+          key={index}
+          title={block.title}
+          sections={[
+            { subtitle: s1?.subtitle, body: s1?.body },
+            { subtitle: s2?.subtitle, body: s2?.body },
+          ]}
+        />
+      );
+    }
+
+    case 'TextX4': {
+      const [c1, c2, c3, c4] = block.columns ?? [];
+      return (
+        <TextX4
+          key={index}
+          title={block.title}
+          columns={[
+            { subtitle: c1?.subtitle, body: c1?.body },
+            { subtitle: c2?.subtitle, body: c2?.body },
+            { subtitle: c3?.subtitle, body: c3?.body },
+            { subtitle: c4?.subtitle, body: c4?.body },
+          ]}
+        />
+      );
+    }
+
+    default:
+      return null;
+  }
+}
+
+const { project, blocks } = content;
+
 export default function AiResolutionCenterPage() {
   return (
     <main className="ds-case-study">
@@ -20,42 +140,19 @@ export default function AiResolutionCenterPage() {
 
       <CaseStudyHeader
         projectNumber="1.0"
-        title="AI Enterprise Support"
+        title={project.title}
         description="Inverting the enterprise support model — AI as an always-accessible floating layer, human agents reserved for the support centre, tickets resolved faster with less escalation."
-        projectType="Marketplace Product"
-        client="Global Supply"
-        date="2025 Q4"
-        impactText="Reduced average response time by 67%. Improved first-contact resolution rate from 38% to 71%. AI resolved 65% of tickets without human escalation."
+        projectType={project.category}
+        client={project.team}
+        date={project.year}
+        impactText={project.impact.join(' ')}
         team={{
-          role: 'Senior Product Designer',
-          org: 'Global Supply',
+          role: project.role,
+          org: project.team,
         }}
       />
 
-      <GraphicX4
-        images={[
-          {
-            src: `${BASE}/diagram-01.png`,
-            alt: 'Current state — enterprise support interface',
-            body: 'Step 1 • Current State • enterprise support interface like Shopify lead with AI to cut costs and bury human access, a reasonable tradeoff for consumer facing product, but a dangerous one for enterprise where unresolved tickets mean real revenue loss.',
-          },
-          {
-            src: `${BASE}/diagram-02.png`,
-            alt: 'Rethinking the landscape — inverted support model',
-            body: 'Rethinking the Landscape • By inverting the model, making AI the always-accessible floating layer and gating human agents exclusively to the support center, we reduce cost, increase response speed, and ensure AI operates with the domain context it needs to actually solve problems.',
-          },
-          {
-            src: `${BASE}/diagram-03.png`,
-            alt: 'AI as a plugin — in-context help across product pages',
-            body: 'AI as a Plugin • Extending the AI floating chat beyond the support center into every core product page means help is delivered in-context, at the exact moment a user encounters friction.',
-          },
-          {
-            src: `${BASE}/diagram-04.png`,
-            alt: 'Ticket management — persistent side panel',
-            body: 'Ticket Management • Enterprise users juggle many concurrent tickets opened and monitored by different people, so surfacing a persistent side panel of ticket cards gives teams instant visibility and fast context-switching without losing their place.',
-          },
-        ]}
-      />
+      {blocks.map((block, i) => renderBlock(block, i))}
     </main>
   );
 }
