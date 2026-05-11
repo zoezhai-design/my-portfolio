@@ -28,14 +28,22 @@ function img(filename: string) {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function renderBlock(block: any, index: number) {
   switch (block.block) {
+    // "GraphicLayoutX1" = legacy name, "GraphicX1" = name used in Notion
     case 'GraphicLayoutX1':
+    case 'GraphicX1':
       return (
         <GraphicX1
           key={index}
           imageSrc={img(block.image)}
           imageAlt={block.alt ?? ''}
-          section1={block.section1}
-          section2={block.section2}
+          section1={
+            block.section1 ??
+            (block.body1 ? { label: block.labelTitle, body: block.body1 } : undefined)
+          }
+          section2={
+            block.section2 ??
+            (block.body2 ? { body: block.body2 } : undefined)
+          }
         />
       );
 
@@ -96,35 +104,31 @@ function renderBlock(block: any, index: number) {
     case 'TextX1':
       return <TextX1 key={index} title={block.title} body={block.body} />;
 
-    case 'TextX2': {
-      const [s1, s2] = block.sections ?? [];
+    case 'TextX2':
       return (
         <TextX2
           key={index}
           title={block.title}
           sections={[
-            { subtitle: s1?.subtitle, body: s1?.body },
-            { subtitle: s2?.subtitle, body: s2?.body },
+            { subtitle: block.subtitle1, body: block.body1 },
+            { subtitle: block.subtitle2, body: block.body2 },
           ]}
         />
       );
-    }
 
-    case 'TextX4': {
-      const [c1, c2, c3, c4] = block.columns ?? [];
+    case 'TextX4':
       return (
         <TextX4
           key={index}
           title={block.title}
           columns={[
-            { subtitle: c1?.subtitle, body: c1?.body },
-            { subtitle: c2?.subtitle, body: c2?.body },
-            { subtitle: c3?.subtitle, body: c3?.body },
-            { subtitle: c4?.subtitle, body: c4?.body },
+            { subtitle: block.subtitle1, body: block.body1 },
+            { subtitle: block.subtitle2, body: block.body2 },
+            { subtitle: block.subtitle3, body: block.body3 },
+            { subtitle: block.subtitle4, body: block.body4 },
           ]}
         />
       );
-    }
 
     default:
       return null;
