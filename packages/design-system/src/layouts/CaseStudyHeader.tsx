@@ -77,38 +77,37 @@ export function CaseStudyHeader({
             </div>
           </div>
 
-          {/* Right half */}
-          <div className="ds-cs-header__body-right">
-            {impactText && (
-              <div className="ds-cs-header__impact">
-                <p className="ds-cs-header__impact-text">{impactText}</p>
-              </div>
-            )}
-            {team && (
-              <div className="ds-cs-header__team">
-                {team.role && (
-                  <div className="ds-cs-header__team-section">
-                    <span className="ds-cs-header__label-name">Role</span>
-                    <span className="ds-cs-header__meta-value">{team.role}</span>
-                  </div>
-                )}
-                {team.collaboration && team.collaboration.length > 0 && (
-                  <div className="ds-cs-header__team-section">
-                    <span className="ds-cs-header__label-name">Collaboration</span>
-                    {team.collaboration.map((name) => (
-                      <span key={name} className="ds-cs-header__meta-value">{name}</span>
-                    ))}
-                  </div>
-                )}
-                {team.org && (
-                  <div className="ds-cs-header__team-section">
-                    <span className="ds-cs-header__label-name">Org</span>
-                    <span className="ds-cs-header__meta-value">{team.org}</span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
+          {/* Impact — col 3 */}
+          {impactText && (
+            <div className="ds-cs-header__impact">
+              <p className="ds-cs-header__impact-text">{impactText}</p>
+            </div>
+          )}
+          {/* Team — col 4 */}
+          {team && (
+            <div className="ds-cs-header__team">
+              {team.role && (
+                <div className="ds-cs-header__team-section">
+                  <span className="ds-cs-header__label-name">Role</span>
+                  <span className="ds-cs-header__meta-value">{team.role}</span>
+                </div>
+              )}
+              {team.collaboration && team.collaboration.length > 0 && (
+                <div className="ds-cs-header__team-section">
+                  <span className="ds-cs-header__label-name">Collaboration</span>
+                  {team.collaboration.map((name) => (
+                    <span key={name} className="ds-cs-header__meta-value">{name}</span>
+                  ))}
+                </div>
+              )}
+              {team.org && (
+                <div className="ds-cs-header__team-section">
+                  <span className="ds-cs-header__label-name">Org</span>
+                  <span className="ds-cs-header__meta-value">{team.org}</span>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -420,21 +420,28 @@
   white-space: nowrap;
 }
 
-/* Body — left half + right half */
+/* Body — 4-column grid */
 .ds-cs-header__body {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-24);
   padding: var(--space-12) 0;
-  min-height: 0;
+  align-items: start;
 }
 
 .ds-cs-header__body-left {
-  flex: 1;
-  min-width: 0;
+  grid-column: 1 / span 2;
   display: flex;
   flex-direction: column;
   gap: var(--space-24);
+}
+
+.ds-cs-header__impact {
+  grid-column: 3;
+}
+
+.ds-cs-header__team {
+  grid-column: 4;
 }
 
 .ds-cs-header__meta-row {
@@ -462,18 +469,6 @@
   width: 100%;
 }
 
-.ds-cs-header__body-right {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  gap: var(--space-24);
-}
-
-.ds-cs-header__impact {
-  flex: 0 0 auto;
-  max-width: 50%;
-}
-
 .ds-cs-header__impact-text {
   font-family: var(--font-sans);
   font-size: var(--text-display-m);
@@ -485,8 +480,6 @@
 }
 
 .ds-cs-header__team {
-  flex: 1;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
@@ -634,6 +627,57 @@
   font-weight: var(--weight-semibold);
   color: var(--color-text);
   margin: 0;
+}
+
+/* ══════════════════════════
+   TEXT BLOCKS (X1–X4)
+   ══════════════════════════ */
+
+.ds-text {
+  padding: var(--space-12) var(--space-48);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.ds-text__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-display-m);
+  line-height: var(--leading-display-m);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-display-m);
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.ds-text__subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-2xl);
+  line-height: var(--leading-label-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.ds-text__body {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-xl);
+  line-height: var(--leading-label-xl);
+  font-weight: var(--weight-regular);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.ds-text__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-text__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-24);
 }
 
 /* ══════════════════════════

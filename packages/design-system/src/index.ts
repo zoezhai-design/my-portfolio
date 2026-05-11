@@ -17,6 +17,9 @@ export { GraphicX2 }       from './layouts/GraphicX2';
 export { GraphicX3 }       from './layouts/GraphicX3';
 export { GraphicX4 }       from './layouts/GraphicX4';
 export { DiagramX1 }       from './layouts/DiagramX1';
+export { TextX1 }          from './layouts/TextX1';
+export { TextX2 }          from './layouts/TextX2';
+export { TextX4 }          from './layouts/TextX4';
 
 export type { CaseStudyNavProps }                                                        from './layouts/CaseStudyNav';
 export type { CaseStudyHeaderProps, CaseStudyHeaderTeam }                                from './layouts/CaseStudyHeader';
@@ -26,3 +29,6 @@ export type { GraphicX2Props, GraphicX2Image }                                  
 export type { GraphicX3Props, GraphicX3Image, GraphicX3Section }                        from './layouts/GraphicX3';
 export type { GraphicX4Props, GraphicX4Image }                                           from './layouts/GraphicX4';
 export type { DiagramX1Props }                                                           from './layouts/DiagramX1';
+export type { TextX1Props }                                                              from './layouts/TextX1';
+export type { TextX2Props, TextX2Section }                                               from './layouts/TextX2';
+export type { TextX4Props, TextX4Column }                                                from './layouts/TextX4';
