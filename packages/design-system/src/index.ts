@@ -20,6 +20,7 @@ export { DiagramX1 }       from './layouts/DiagramX1';
 export { TextX1 }          from './layouts/TextX1';
 export { TextX2 }          from './layouts/TextX2';
 export { TextX4 }          from './layouts/TextX4';
+export { TextX5 }          from './layouts/TextX5';
 
 export type { CaseStudyNavProps }                                                        from './layouts/CaseStudyNav';
 export type { CaseStudyHeaderProps, CaseStudyHeaderTeam }                                from './layouts/CaseStudyHeader';
@@ -32,3 +33,4 @@ export type { DiagramX1Props }                                                  
 export type { TextX1Props }                                                              from './layouts/TextX1';
 export type { TextX2Props, TextX2Section }                                               from './layouts/TextX2';
 export type { TextX4Props, TextX4Column }                                                from './layouts/TextX4';
+export type { TextX5Props, TextX5Section }                                               from './layouts/TextX5';

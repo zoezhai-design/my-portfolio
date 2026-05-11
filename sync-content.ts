@@ -74,12 +74,15 @@ const FIELD_MAP: Record<string, string> = {
   'body 2':          'body2',
   'body 3':          'body3',
   'body 4':          'body4',
+  'body 5':          'body5',
+  'body text 5':     'body5',
   // subtitle variants
   'subtitle':        'subtitle',
   'subtitle 1':      'subtitle1',
   'subtitle 2':      'subtitle2',
   'subtitle 3':      'subtitle3',
   'subtitle 4':      'subtitle4',
+  'subtitle 5':      'subtitle5',
   // misc
   'caption':         'caption',
   'alt':             'alt',

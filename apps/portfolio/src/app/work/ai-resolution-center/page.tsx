@@ -9,6 +9,7 @@ import {
   TextX1,
   TextX2,
   TextX4,
+  TextX5,
 } from '@my-portfolio/design-system';
 import { NavHistoryButtons } from '@/components/NavHistoryButtons';
 import content from '../../../../content/ai-resolution-center.content.json';
@@ -126,6 +127,21 @@ function renderBlock(block: any, index: number) {
             { subtitle: block.subtitle2, body: block.body2 },
             { subtitle: block.subtitle3, body: block.body3 },
             { subtitle: block.subtitle4, body: block.body4 },
+          ]}
+        />
+      );
+
+    case 'TextX5':
+      return (
+        <TextX5
+          key={index}
+          title={block.title}
+          sections={[
+            { subtitle: block.subtitle1, body: block.body1 },
+            { subtitle: block.subtitle2, body: block.body2 },
+            { subtitle: block.subtitle3, body: block.body3 },
+            { subtitle: block.subtitle4, body: block.body4 },
+            { subtitle: block.subtitle5, body: block.body5 },
           ]}
         />
       );
