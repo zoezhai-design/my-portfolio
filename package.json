@@ -6,7 +6,8 @@
     "build": "pnpm --filter portfolio build",
     "ds:dev": "pnpm --filter design-system dev",
     "lint": "pnpm -r lint",
-    "sync": "tsx sync-content.ts"
+    "sync": "tsx sync-content.ts",
+    "sync-images": "bash sync-images.sh"
   },
   "devDependencies": {
     "@notionhq/client": "^2.3.0",
