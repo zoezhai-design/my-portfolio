@@ -1,13 +1,12 @@
 {
   "project": {
     "title": "AI Enterprise Support",
-    "slug": "ai-resolution-center",
+    "slug": "",
     "category": "Marketplace Product",
     "role": "Senior Product Designer",
     "team": "Global Supply",
     "year": "2025 Q4",
     "status": "Shipped",
-    "heroImage": "handoff-b1.png",
     "impact": [
       "Reduced average response time by 67%",
       "Improved first-contact resolution rate from 38% to 71%",
@@ -15,27 +14,6 @@
     ]
   },
   "blocks": [
-    {
-      "block": "GraphicLayoutX4",
-      "items": [
-        {
-          "image": "diagram-01.png",
-          "body": "Step 1 • Current State • enterprise support interface like Shopify lead with AI to cut costs and bury human access, a reasonable tradeoff for consumer facing product, but a dangerous one for enterprise where unresolved tickets mean real revenue loss."
-        },
-        {
-          "image": "diagram-02.png",
-          "body": "Rethinking the Landscape • By inverting the model, making AI the always-accessible floating layer and gating human agents exclusively to the support center, we reduce cost, increase response speed, and ensure AI operates with the domain context it needs to actually solve problems."
-        },
-        {
-          "image": "diagram-03.png",
-          "body": "AI as a Plugin • Extending the AI floating chat beyond the support center into every core product page means help is delivered in-context, at the exact moment a user encounters friction."
-        },
-        {
-          "image": "diagram-04.png",
-          "body": "Ticket Management • Enterprise users juggle many concurrent tickets opened and monitored by different people, so surfacing a persistent side panel of ticket cards gives teams instant visibility and fast context-switching without losing their place."
-        }
-      ]
-    },
     {
       "block": "GraphicX1",
       "image": "landing-2.png",
@@ -48,19 +26,21 @@
       "image": "landing-1.png",
       "labelTitle": "Final design - Structured intake, immediate access",
       "body1": "For enterprise brokers, time is revenue. When something breaks, they need a direct path to the right person not a search bar.",
-      "body2": "The form surfaces upfront, collecting exactly what the agent needs to act immediately. Human support isn't gated, it's ready. Because at this level, getting help fast is part of the product promise."
+      "body2": "The form surfaces upfront, collecting exactly what the agent needs to act immediately. Human support isn't gated , it's ready. Because at this level, getting help fast is part of the product promise."
     },
     {
       "block": "GraphicX1",
       "image": "side-panel-design-1.png",
       "labelTitle": "Ticket workspace - action bar",
-      "body1": "Close and escalate sit at the thread level."
+      "body1": "Close and escalate sit at the thread level.",
+      "body2": ""
     },
     {
       "block": "GraphicX1",
       "image": "side-panel-design-2.png",
       "labelTitle": "Ticket workspace - action with full context",
-      "body1": "The panel expands the thread into a workspace: AI summary, related IDs, actions, and history. Everything the broker needs to act with confidence."
+      "body1": "The panel expands the thread into a workspace: AI summary, related IDs, actions, and history. Everything the broker needs to act with confidence.",
+      "body2": ""
     },
     {
       "block": "DiagramX1",
@@ -77,14 +57,14 @@
     {
       "block": "DiagramX1",
       "image": "flow-diagram-1.png",
-      "caption": "(Proactive Escalation) AI confidence peaks → resolution check surfaced → broker confirms unresolved → escalation begins. & (Reactive Escalation) Broker flags issue → feedback triggers escalation → intake begins."
+      "caption": "(Proactive Escalation) AI confidence peaks → resolution check surfaced → broker confirms unresolved → escalation begins.\n\n&\n\n(Reactive Escalation) Broker flags issue → feedback triggers escalation → intake begins."
     },
     {
       "block": "GraphicX1",
       "image": "handoff-a1.png",
       "labelTitle": "Proactive escalation",
       "body1": "When the AI reaches high confidence, it surfaces a check-in, not because it's failing, but because it's done its best work.",
-      "body2": "If the broker confirms the issue isn't resolved, that signal opens the escalation path."
+      "body2": "If the broker confirms the issue isn't resolved, that signal opens the escalation path"
     },
     {
       "block": "GraphicX1",
@@ -96,7 +76,7 @@
     {
       "block": "DiagramX1",
       "image": "flow-diagram-2.png",
-      "caption": "Structured intake captures context → AI summary generated."
+      "caption": "Structured intake captures context → AI summary generated"
     },
     {
       "block": "GraphicX1",
@@ -113,7 +93,7 @@
     {
       "block": "GraphicX1",
       "image": "handoff-a3.png",
-      "labelTitle": "Human agent arrival",
+      "labelTitle": "Human agent Arrival",
       "body1": "A specialist receives the ticket with AI summary, intent, and account context already in place.",
       "body2": "No reexplanation. No cold start. The handoff carries full context forward."
     },
@@ -143,21 +123,21 @@
     },
     {
       "block": "TextX2",
-      "title": "AI Content Design — the response is a design output.",
+      "title": "AI Content Design, the response is a design output.",
       "subtitle1": "Without Content Design",
-      "body1": "\"Hi there! That's a great question. There could be several reasons why your listing might be experiencing issues. Generally speaking, marketplace platforms have various policies that can affect visibility...\"",
+      "body1": "\"Hi there! That's a great question. There could be several reasons why your listing might be experiencing issues. Generally speaking, marketplace platforms have various policies that can affect visibility...”",
       "subtitle2": "With Content Design",
       "body2": "\"Your listing is under review due to a flagged purchase entity. Estimated resolution: 24 hours. Reference: #TID223123111. Do you want me to escalate this to a specialist?\""
     },
     {
       "block": "DiagramX1",
       "image": "content-design-levers.png",
-      "caption": "Lever 1 - Trigger intent taxonomy: Mine real tickets. Name the problem. Tags answer what, never how. • Lever 2 - Domain modules: Each intent maps to one module. The module sets the logic, the sources, and the exact condition that fires a human handoff. • Lever 3 - Response structure: Direct answer first. Detail second. One follow up question. Never a command. • Lever 4 - Guardrails: When the AI can't answer, it says so. Routes to human with full context intact. Never guesses. • Lever 5 - Voice and persona: Peer-level. Precise over warm. Treats brokers as experts, not customers."
+      "caption": "• Lever 1 - Trigger intent taxonomy: Mine real tickets. Name the problem. Tags answer what, never how.\n\n• Lever 2 - Domain modules: Each intent maps to one module. The module sets the logic, the sources, and the exact condition that fires a human handoff.\n\n• Lever 3 - Response structure: Direct answer first. Detail second. One follow up question. Never a command.\n\n• Lever 4 - Guardrails: When the AI can't answer, it says so. Routes to human with full context intact. Never guesses.\n\n• Lever 5 - Voice and persona: Peer-level. Precise over warm. Treats brokers as experts, not customers."
     },
     {
       "block": "TextX1",
       "title": "The output, lever by lever.",
-      "body": "Lever 1 - Listing issue detected.\n\nLever 2 - Listing issue detected. Related to marketplace compliance, flagged purchase entity. Policy ref: 4.2.\n\nLever 3 - Your listing is under review due to a flagged purchase entity. Policy ref: 4.2. Marketplace compliance. Estimated resolution ~24 hours. Reference ID: #TID223123111. Do you want me to escalate this to a specialist?\n\nLever 4 - Your listing is under review due to a flagged purchase entity. Policy ref: 4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. If unresolved after 4 hours, this will automatically escalate to a human agent with full context.\n\nLever 5 - Marketplace issue detected on listing #TID223123111. Root cause: flagged purchase entity. Policy ref: §4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. Reference ID logged. Specialist assigned. If unresolved after 4 hours, this escalates automatically with full context."
+      "body": "• Lever 1 - Listing issue detected.\n\n• Lever 2 - Listing issue detected. Related to marketplace compliance, flagged purchase entity. Policy ref: 4.2.\n\n• Lever 3 - Your listing is under review due to a flagged purchase entity. Policy ref: 4.2. Marketplace compliance. Estimated resolution ~24 hours. Reference ID: #TID223123111. Do you want me to escalate this to a specialist?\n\n• Lever 4 - Your listing is under review due to a flagged purchase entity. Policy ref: 4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. If unresolved after 4 hours, this will automatically escalate to a human agent with full context.\n\n• Lever 5 - Marketplace issue detected on listing #TID223123111. Root cause: flagged purchase entity. Policy ref: §4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. Reference ID logged. Specialist assigned. If unresolved after 4 hours, this escalates automatically with full context."
     },
     {
       "block": "TextX4",
