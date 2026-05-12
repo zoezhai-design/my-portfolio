@@ -42,9 +42,9 @@ export function CaseStudyHeader({
         {description && <p className="ds-cs-header__description">{description}</p>}
       </div>
 
-      {/* Content — 4-col label header + body */}
+      {/* Content — label row + metadata row + image row */}
       <div className="ds-cs-header__content">
-        {/* 4-column label row */}
+        {/* 4-column label header row */}
         <div className="ds-cs-header__label-row">
           <div className="ds-cs-header__label-col">
             <span className="ds-cs-header__label-name">Project Type</span>
@@ -60,30 +60,23 @@ export function CaseStudyHeader({
           </div>
         </div>
 
-        {/* Body — left: client/date + image, right: impact + team */}
+        {/* Metadata — 4-column grid: client+date (cols 1–2) · impact (col 3) · team (col 4) */}
         <div className="ds-cs-header__body">
-          {/* Left half */}
-          <div className="ds-cs-header__body-left">
-            <div className="ds-cs-header__meta-row">
-              <div className="ds-cs-header__meta-col">
-                <span className="ds-cs-header__meta-value">{client ?? projectType}</span>
-              </div>
-              <div className="ds-cs-header__meta-col">
-                <span className="ds-cs-header__meta-value">{date}</span>
-              </div>
+          <div className="ds-cs-header__client-date">
+            <div className="ds-cs-header__meta-col">
+              <span className="ds-cs-header__meta-value">{client ?? projectType}</span>
             </div>
-            <div className="ds-cs-header__image">
-              <Image src={imageSrc} alt={imageAlt} />
+            <div className="ds-cs-header__meta-col">
+              <span className="ds-cs-header__meta-value">{date}</span>
             </div>
           </div>
 
-          {/* Impact — col 3 */}
           {impactText && (
             <div className="ds-cs-header__impact">
               <p className="ds-cs-header__impact-text">{impactText}</p>
             </div>
           )}
-          {/* Team — col 4 */}
+
           {team && (
             <div className="ds-cs-header__team">
               {team.role && (
@@ -109,6 +102,13 @@ export function CaseStudyHeader({
             </div>
           )}
         </div>
+
+        {/* Image row — full-width below metadata */}
+        {imageSrc && (
+          <div className="ds-cs-header__image-row">
+            <Image src={imageSrc} alt={imageAlt} />
+          </div>
+        )}
       </div>
     </section>
   );
