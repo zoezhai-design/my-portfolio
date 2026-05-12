@@ -5,9 +5,13 @@
     "dev": "pnpm --filter portfolio dev",
     "build": "pnpm --filter portfolio build",
     "ds:dev": "pnpm --filter design-system dev",
-    "lint": "pnpm -r lint"
+    "lint": "pnpm -r lint",
+    "sync": "tsx sync-content.ts",
+    "sync-images": "bash sync-images.sh"
   },
   "devDependencies": {
+    "@notionhq/client": "^2.3.0",
+    "tsx": "^4.19.4",
     "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@10.33.0",

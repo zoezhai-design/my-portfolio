@@ -1,7 +1,7 @@
 {
   "project": {
     "title": "AI Enterprise Support",
-    "slug": "ai-resolution-center",
+    "slug": "",
     "category": "Marketplace Product",
     "role": "Senior Product Designer",
     "team": "Global Supply",
@@ -19,7 +19,7 @@
       "items": [
         {
           "image": "diagram-01.png",
-          "body": "Step 1 • Current State • enterprise support interface like Shopify lead with AI to cut costs and bury human access, a reasonable tradeoff for consumer facing product, but a dangerous one for enterprise where unresolved tickets mean real revenue loss."
+          "body": "Step 1 • Current State •  enterprise support interface like Shopify lead with AI to cut costs and bury human access, a reasonable tradeoff for consumer facing product, but a dangerous one for enterprise where unresolved tickets mean real revenue loss."
         },
         {
           "image": "diagram-02.png",
@@ -34,6 +34,181 @@
           "body": "Ticket Management • Enterprise users juggle many concurrent tickets opened and monitored by different people, so surfacing a persistent side panel of ticket cards gives teams instant visibility and fast context-switching without losing their place."
         }
       ]
+    },
+    {
+      "block": "GraphicX1",
+      "image": "landing-2.png",
+      "labelTitle": "Exploration - Search first entry",
+      "body1": "An earlier direction that led with self service: search, runbooks, and AI before any human contact. Reaching an agent required an explicit choice.",
+      "body2": "The gate made sense in theory, but it added friction for the wrong user. Enterprise brokers managing millions in GMS shouldn't have to work harder to get help."
+    },
+    {
+      "block": "GraphicX1",
+      "image": "landing-1.png",
+      "labelTitle": "Final design - Structured intake, immediate access",
+      "body1": "For enterprise brokers, time is revenue. When something breaks, they need a direct path to the right person not a search bar.",
+      "body2": "The form surfaces upfront, collecting exactly what the agent needs to act immediately. Human support isn't gated , it's ready. Because at this level, getting help fast is part of the product promise."
+    },
+    {
+      "block": "TextX1",
+      "title": "What does a broker need inside a ticket?",
+      "body": "Once a ticket is open, the broker needs more than a chat window. They need context, status, history, and the ability to act, all without leaving the thread. The question is how much to surface, and when. Not everything needs to be visible upfront. A side panel creates room for deeper data: related IDs, financial status, ticket history, and CTAs, available when needed, out of the way when not."
+    },
+    {
+      "block": "GraphicX1",
+      "image": "side-panel-design-1.png",
+      "labelTitle": "Ticket workspace - action bar",
+      "body1": "Close and escalate sit at the thread level.",
+      "body2": ""
+    },
+    {
+      "block": "GraphicX1",
+      "image": "side-panel-design-2.png",
+      "labelTitle": "Ticket workspace - action with full context",
+      "body1": "The panel expands the thread into a workspace: AI summary, related IDs, actions, and history. Everything the broker needs to act with confidence."
+    },
+    {
+      "block": "TextX2",
+      "title": "Every path to resolution",
+      "subtitle1": "The core flow",
+      "body1": "The happy path is the easiest to design: AI engages, resolves, ticket closes. No human needed.",
+      "subtitle2": "The edge cases",
+      "body2": "The hard work is in the edges: proactive escalation, reactive escalation, structured intake, human handoff, and the feedback loop that closes the system. Getting every one of these paths right is what makes the resolution center trustworthy at scale."
+    },
+    {
+      "block": "DiagramX1",
+      "image": "flow-diagram.png",
+      "caption": "every path to resolution"
+    },
+    {
+      "block": "GraphicX1",
+      "image": "happy-path.png",
+      "labelTitle": "Happy path",
+      "body1": "The AI resolves the issue directly, no human needed. Ticket closes with a resolution summary. Fast, low-cost, no friction."
+    },
+    {
+      "block": "DiagramX1",
+      "image": "flow-diagram-1.png",
+      "caption": "(Proactive Escalation) AI confidence peaks → resolution check surfaced → broker confirms unresolved → escalation begins.\n\n&\n\n(Reactive Escalation) Broker flags issue → feedback triggers escalation → intake begins."
+    },
+    {
+      "block": "GraphicX1",
+      "image": "handoff-a1.png",
+      "labelTitle": "Proactive escalation",
+      "body1": "When the AI reaches high confidence, it surfaces a check-in, not because it's failing, but because it's done its best work. If the broker confirms the issue isn't resolved, that signal opens the escalation path"
+    },
+    {
+      "block": "GraphicX1",
+      "image": "handoff-b1.png",
+      "labelTitle": "Reactive escalation",
+      "body1": "The broker signals the AI isn't helping, through feedback or frustration. That signal triggers the escalation path, not a dead end."
+    },
+    {
+      "block": "DiagramX1",
+      "image": "flow-diagram-2.png",
+      "caption": "Structured intake captures context → AI summary generated"
+    },
+    {
+      "block": "GraphicX1",
+      "image": "handoff-b2.png",
+      "labelTitle": "Intake form",
+      "body1": "Before a human picks up the ticket, the broker completes a structured intake. This packages the minimum information a specialist needs to act immediately."
+    },
+    {
+      "block": "DiagramX1",
+      "image": "flow-diagram-3.png",
+      "caption": "Specialist receives full context → picks up ticket."
+    },
+    {
+      "block": "GraphicX1",
+      "image": "handoff-a3.png",
+      "labelTitle": "Human agent Arrival",
+      "body1": "A specialist receives the ticket with AI summary, intent, and account context already in place. No reexplanation. No cold start. The handoff carries full context forward."
+    },
+    {
+      "block": "DiagramX1",
+      "image": "flow-diagram-4.png",
+      "caption": "Issue resolved → feedback collected → system learns."
+    },
+    {
+      "block": "GraphicX1",
+      "image": "solved.png",
+      "labelTitle": "Solved",
+      "body1": "The issue is resolved and the broker is notified with a clear resolution summary. A feedback prompt closes the loop, informing how the AI and intake improve over time."
+    },
+    {
+      "block": "TextX1",
+      "title": "The other side of the ticket",
+      "body": "The broker's experience of getting help is only as good as the specialist's experience of giving it. When a ticket lands on the agent side, they need a complete context package, not a blank chat window. This section covers what data we surface for the human agent before they ever type a word: the AI summary, intent classification, account history, and related IDs that turn a cold handoff into a warm one."
+    },
+    {
+      "block": "DiagramX1",
+      "image": "happypath-diagram.png",
+      "caption": "two sides of one ticket"
+    },
+    {
+      "block": "GraphicX1",
+      "image": "admin-path.png",
+      "labelTitle": "Two sides of one ticket @ Specialist view",
+      "body1": "Every ticket the broker submits lands on the specialist side, a purpose-built admin interface where agents manage, diagnose, and resolve issues. What the broker sees as a status update, the specialist sees as an action item with full context, broker profile, SLA urgency, and resolution history."
+    },
+    {
+      "block": "TextX1",
+      "title": "The AI response is a design problem.",
+      "body": "Without content design, AI responses are generic, unstructured, and unhelpful, a chatGPT wrapper that doesn't know the domain. The answer isn't to put all the responsibility on engineering. Design defines the rules: what triggers a response, what domain knowledge applies, how the answer is structured, where the guardrails sit, and what voice the AI speaks in. With those five levers in place, every response is shaped automatically at scale, without manual intervention."
+    },
+    {
+      "block": "TextX2",
+      "title": "AI Content Design, the response is a design output.",
+      "subtitle1": "Without Content Design",
+      "body1": "\"Hi there! That's a great question. There could be several reasons why your listing might be experiencing issues. Generally speaking, marketplace platforms have various policies that can affect visibility...”",
+      "subtitle2": "With Content Design",
+      "body2": "\"Your listing is under review due to a flagged purchase entity. Estimated resolution: 24 hours. Reference: #TID223123111. Do you want me to escalate this to a specialist?\""
+    },
+    {
+      "block": "DiagramX1",
+      "image": "content-design-levers.png",
+      "subtitle1": "Lever 1 • Trigger intent taxonomy",
+      "body1": "Mine real tickets. Name the problem. Tags answer what, never how.",
+      "subtitle2": "Lever 2 • Domain modules",
+      "body2": "Each intent maps to one module. The module sets the logic, the sources, and the exact condition that fires a human handoff.",
+      "subtitle3": "Lever 3 • Response structure",
+      "body3": "Direct answer first. Detail second. One follow up question. Never a command.",
+      "subtitle4": "Lever 4 • Guardrails",
+      "body4": "When the AI can't answer, it says so. Routes to human with full context intact. Never guesses.",
+      "subtitle5": "Lever 5 • Voice and persona",
+      "body5": "Peer-level. Precise over warm. Treats brokers as experts, not customers."
+    },
+    {
+      "block": "TextX5",
+      "title": "The output, lever by lever.",
+      "subtitle1": "Lever 1 Trigger intent taxonomy",
+      "body1": "Listing issue detected.",
+      "subtitle2": "Lever 2 • Domain modules",
+      "body2": "Listing issue detected. Related to marketplace compliance, flagged purchase entity. Policy ref: 4.2.",
+      "subtitle3": "Lever 3 • Response structure",
+      "body3": "Your listing is under review due to a flagged purchase entity. Policy ref: 4.2. Marketplace compliance. Estimated resolution ~24 hours. Reference ID: #TID223123111. Do you want me to escalate this to a specialist?",
+      "subtitle4": "Lever 4 • Guardrails",
+      "body4": "Your listing is under review due to a flagged purchase entity. Policy ref: 4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. If unresolved after 4 hours, this will automatically escalate to a human agent with full context.",
+      "subtitle5": "Lever 5 • Voice and persona",
+      "body5": "Marketplace issue detected on listing #TID223123111. Root cause: flagged purchase entity. Policy ref: §4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. Reference ID logged. Specialist assigned. If unresolved after 4 hours, this escalates automatically with full context."
+    },
+    {
+      "block": "TextX1",
+      "title": "Designing for complexity without confusion",
+      "body": "Everything in this case study sits on top of a more fundamental question: how do you design for a data heavy, high stakes enterprise platform without overwhelming the people who depend on it? The brokers using ReachPro manage millions in GMS across hundreds of events. Complexity isn't the problem, confusion is. This section covers the core design heuristics that guided every decision: findability, accuracy, readability, intelligence, and role based personalization. These aren't aesthetic choices. They're the operating principles of the platform."
+    },
+    {
+      "block": "TextX4",
+      "title": "Platform Design Heuristics for High Velocity B2B",
+      "subtitle1": "Findability",
+      "body1": "Every feature depends on brokers being able to locate the right data, at the right time. We designed intelligent search and contextual filtering to eliminate friction and keep decision-making moving.",
+      "subtitle2": "Accuracy = Speed",
+      "body2": "Speed without accuracy breaks trust. We built the platform to deliver reliable, real-time data at scale, so brokers can act with confidence, not second guess the tool.",
+      "subtitle3": "Readability",
+      "body3": "Brokers work with dense, high-stakes datasets under time pressure. Clear information hierarchy, structured workflows, and visual prioritization ensure complexity never becomes confusion.",
+      "subtitle4": "Intelligence",
+      "body4": "The platform shouldn't just respond, it should anticipate. Proactive alerts, AI-assisted pricing insights, and automation tools transform Reach Pro from a passive tool into an active partner."
     }
   ]
 }
