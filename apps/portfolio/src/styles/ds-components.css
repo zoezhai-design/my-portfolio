@@ -429,10 +429,9 @@
   align-items: start;
 }
 
-.ds-cs-header__body-left {
+.ds-cs-header__client-date {
   grid-column: 1 / span 2;
   display: flex;
-  flex-direction: column;
   gap: var(--space-24);
 }
 
@@ -465,7 +464,8 @@
   white-space: nowrap;
 }
 
-.ds-cs-header__image {
+.ds-cs-header__image-row {
+  padding-top: var(--space-12);
   width: 100%;
 }
 
@@ -598,7 +598,7 @@
    ══════════════════════════ */
 
 .ds-diagram {
-  padding: var(--space-48);
+  padding: var(--space-48) var(--space-48) var(--space-24);
   background: var(--color-bg);
 }
 
@@ -617,7 +617,7 @@
   grid-column: 4;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .ds-diagram__caption {
@@ -634,7 +634,7 @@
    ══════════════════════════ */
 
 .ds-text {
-  padding: var(--space-12) var(--space-48);
+  padding: var(--space-48) var(--space-48) var(--space-24);
   background: var(--color-bg);
   display: flex;
   flex-direction: column;

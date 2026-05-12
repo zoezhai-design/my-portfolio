@@ -1,43 +1,28 @@
 import { Image } from '../components/Image';
 
-export interface GraphicX1Section {
-  label?: string;
-  body: string;
-}
-
 export interface GraphicX1Props {
   imageSrc?: string;
   imageAlt?: string;
-  /** Section 1 — label + body, fills top of text panel */
-  section1?: GraphicX1Section;
-  /** Section 2 — body only, pinned to bottom of text panel */
-  section2?: GraphicX1Section;
+  /** Label title — rendered with border-bottom above body */
+  label?: string;
+  /** Body text */
+  body?: string;
 }
 
-/** Equal halves: image left, text panel right.
- *  Text panel: section1 (label+body, flex-1) on top, section2 (body only) at bottom. */
-export function GraphicX1({ imageSrc, imageAlt = '', section1, section2 }: GraphicX1Props) {
+/** 4-column grid: image spans cols 1–3, text panel in col 4 (label + body). */
+export function GraphicX1({ imageSrc, imageAlt = '', label, body }: GraphicX1Props) {
   return (
     <section className="ds-graphic ds-graphic--x1">
       <div className="ds-graphic__content">
         <div className="ds-graphic__image">
           <Image src={imageSrc} alt={imageAlt} />
         </div>
-        {(section1 || section2) && (
+        {(label || body) && (
           <div className="ds-graphic__text">
-            {section1 && (
-              <div className="ds-graphic__section ds-graphic__section--grow">
-                {section1.label && (
-                  <div className="ds-graphic__section-label">{section1.label}</div>
-                )}
-                <div className="ds-graphic__section-body">{section1.body}</div>
-              </div>
-            )}
-            {section2 && (
-              <div className="ds-graphic__section">
-                <div className="ds-graphic__section-body">{section2.body}</div>
-              </div>
-            )}
+            <div className="ds-graphic__section">
+              {label && <div className="ds-graphic__section-label">{label}</div>}
+              {body  && <div className="ds-graphic__section-body">{body}</div>}
+            </div>
           </div>
         )}
       </div>

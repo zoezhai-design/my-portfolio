@@ -37,14 +37,8 @@ function renderBlock(block: any, index: number) {
           key={index}
           imageSrc={img(block.image)}
           imageAlt={block.alt ?? ''}
-          section1={
-            block.section1 ??
-            (block.body1 ? { label: block.labelTitle, body: block.body1 } : undefined)
-          }
-          section2={
-            block.section2 ??
-            (block.body2 ? { body: block.body2 } : undefined)
-          }
+          label={block.labelTitle}
+          body={block.body1}
         />
       );
 

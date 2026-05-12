@@ -47,8 +47,8 @@ export default function CaseStudyPage({ params }: PageProps) {
       <GraphicX1
         imageSrc=""
         imageAlt="Hero screenshot"
-        section1={{ label: 'Platform', body: project.type }}
-        section2={{ body: 'End-to-end product design' }}
+        label="Platform"
+        body={project.type}
       />
 
       {/* ── Graphic X2 — two equal columns with label/body + image ── */}
