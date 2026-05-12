@@ -15,6 +15,27 @@
   },
   "blocks": [
     {
+      "block": "GraphicLayoutX4",
+      "items": [
+        {
+          "image": "diagram-01.png",
+          "body": "Step 1 • Current State •  enterprise support interface like Shopify lead with AI to cut costs and bury human access, a reasonable tradeoff for consumer facing product, but a dangerous one for enterprise where unresolved tickets mean real revenue loss."
+        },
+        {
+          "image": "diagram-02.png",
+          "body": "Rethinking the Landscape • By inverting the model, making AI the always-accessible floating layer and gating human agents exclusively to the support center, we reduce cost, increase response speed, and ensure AI operates with the domain context it needs to actually solve problems."
+        },
+        {
+          "image": "diagram-03.png",
+          "body": "AI as a Plugin • Extending the AI floating chat beyond the support center into every core product page means help is delivered in-context, at the exact moment a user encounters friction."
+        },
+        {
+          "image": "diagram-04.png",
+          "body": "Ticket Management • Enterprise users juggle many concurrent tickets opened and monitored by different people, so surfacing a persistent side panel of ticket cards gives teams instant visibility and fast context-switching without losing their place."
+        }
+      ]
+    },
+    {
       "block": "GraphicX1",
       "image": "landing-2.png",
       "labelTitle": "Exploration - Search first entry",
@@ -29,6 +50,11 @@
       "body2": "The form surfaces upfront, collecting exactly what the agent needs to act immediately. Human support isn't gated , it's ready. Because at this level, getting help fast is part of the product promise."
     },
     {
+      "block": "TextX1",
+      "title": "What does a broker need inside a ticket?",
+      "body": "Once a ticket is open, the broker needs more than a chat window. They need context, status, history, and the ability to act, all without leaving the thread. The question is how much to surface, and when. Not everything needs to be visible upfront. A side panel creates room for deeper data: related IDs, financial status, ticket history, and CTAs, available when needed, out of the way when not."
+    },
+    {
       "block": "GraphicX1",
       "image": "side-panel-design-1.png",
       "labelTitle": "Ticket workspace - action bar",
@@ -39,8 +65,15 @@
       "block": "GraphicX1",
       "image": "side-panel-design-2.png",
       "labelTitle": "Ticket workspace - action with full context",
-      "body1": "The panel expands the thread into a workspace: AI summary, related IDs, actions, and history. Everything the broker needs to act with confidence.",
-      "body2": ""
+      "body1": "The panel expands the thread into a workspace: AI summary, related IDs, actions, and history. Everything the broker needs to act with confidence."
+    },
+    {
+      "block": "TextX2",
+      "title": "Every path to resolution",
+      "subtitle1": "The core flow",
+      "body1": "The happy path is the easiest to design: AI engages, resolves, ticket closes. No human needed.",
+      "subtitle2": "The edge cases",
+      "body2": "The hard work is in the edges: proactive escalation, reactive escalation, structured intake, human handoff, and the feedback loop that closes the system. Getting every one of these paths right is what makes the resolution center trustworthy at scale."
     },
     {
       "block": "DiagramX1",
@@ -51,8 +84,7 @@
       "block": "GraphicX1",
       "image": "happy-path.png",
       "labelTitle": "Happy path",
-      "body1": "The AI resolves the issue directly, no human needed.",
-      "body2": "Ticket closes with a resolution summary. Fast, low-cost, no friction."
+      "body1": "The AI resolves the issue directly, no human needed. Ticket closes with a resolution summary. Fast, low-cost, no friction."
     },
     {
       "block": "DiagramX1",
@@ -63,15 +95,13 @@
       "block": "GraphicX1",
       "image": "handoff-a1.png",
       "labelTitle": "Proactive escalation",
-      "body1": "When the AI reaches high confidence, it surfaces a check-in, not because it's failing, but because it's done its best work.",
-      "body2": "If the broker confirms the issue isn't resolved, that signal opens the escalation path"
+      "body1": "When the AI reaches high confidence, it surfaces a check-in, not because it's failing, but because it's done its best work. If the broker confirms the issue isn't resolved, that signal opens the escalation path"
     },
     {
       "block": "GraphicX1",
       "image": "handoff-b1.png",
       "labelTitle": "Reactive escalation",
-      "body1": "The broker signals the AI isn't helping, through feedback or frustration.",
-      "body2": "That signal triggers the escalation path, not a dead end."
+      "body1": "The broker signals the AI isn't helping, through feedback or frustration. That signal triggers the escalation path, not a dead end."
     },
     {
       "block": "DiagramX1",
@@ -82,8 +112,7 @@
       "block": "GraphicX1",
       "image": "handoff-b2.png",
       "labelTitle": "Intake form",
-      "body1": "Before a human picks up the ticket, the broker completes a structured intake.",
-      "body2": "This packages the minimum information a specialist needs to act immediately."
+      "body1": "Before a human picks up the ticket, the broker completes a structured intake. This packages the minimum information a specialist needs to act immediately."
     },
     {
       "block": "DiagramX1",
@@ -94,8 +123,7 @@
       "block": "GraphicX1",
       "image": "handoff-a3.png",
       "labelTitle": "Human agent Arrival",
-      "body1": "A specialist receives the ticket with AI summary, intent, and account context already in place.",
-      "body2": "No reexplanation. No cold start. The handoff carries full context forward."
+      "body1": "A specialist receives the ticket with AI summary, intent, and account context already in place. No reexplanation. No cold start. The handoff carries full context forward."
     },
     {
       "block": "DiagramX1",
@@ -106,8 +134,12 @@
       "block": "GraphicX1",
       "image": "solved.png",
       "labelTitle": "Solved",
-      "body1": "The issue is resolved and the broker is notified with a clear resolution summary.",
-      "body2": "A feedback prompt closes the loop, informing how the AI and intake improve over time."
+      "body1": "The issue is resolved and the broker is notified with a clear resolution summary. A feedback prompt closes the loop, informing how the AI and intake improve over time."
+    },
+    {
+      "block": "TextX1",
+      "title": "The other side of the ticket",
+      "body": "The broker's experience of getting help is only as good as the specialist's experience of giving it. When a ticket lands on the agent side, they need a complete context package, not a blank chat window. This section covers what data we surface for the human agent before they ever type a word: the AI summary, intent classification, account history, and related IDs that turn a cold handoff into a warm one."
     },
     {
       "block": "DiagramX1",
@@ -117,9 +149,13 @@
     {
       "block": "GraphicX1",
       "image": "admin-path.png",
-      "labelTitle": "Two sides of one ticket",
-      "body1": "Specialist view",
-      "body2": "Every ticket the broker submits lands on the specialist side, a purpose-built admin interface where agents manage, diagnose, and resolve issues. What the broker sees as a status update, the specialist sees as an action item with full context, broker profile, SLA urgency, and resolution history."
+      "labelTitle": "Two sides of one ticket @ Specialist view",
+      "body1": "Every ticket the broker submits lands on the specialist side, a purpose-built admin interface where agents manage, diagnose, and resolve issues. What the broker sees as a status update, the specialist sees as an action item with full context, broker profile, SLA urgency, and resolution history."
+    },
+    {
+      "block": "TextX1",
+      "title": "The AI response is a design problem.",
+      "body": "Without content design, AI responses are generic, unstructured, and unhelpful, a chatGPT wrapper that doesn't know the domain. The answer isn't to put all the responsibility on engineering. Design defines the rules: what triggers a response, what domain knowledge applies, how the answer is structured, where the guardrails sit, and what voice the AI speaks in. With those five levers in place, every response is shaped automatically at scale, without manual intervention."
     },
     {
       "block": "TextX2",
@@ -132,12 +168,35 @@
     {
       "block": "DiagramX1",
       "image": "content-design-levers.png",
-      "caption": "• Lever 1 - Trigger intent taxonomy: Mine real tickets. Name the problem. Tags answer what, never how.\n\n• Lever 2 - Domain modules: Each intent maps to one module. The module sets the logic, the sources, and the exact condition that fires a human handoff.\n\n• Lever 3 - Response structure: Direct answer first. Detail second. One follow up question. Never a command.\n\n• Lever 4 - Guardrails: When the AI can't answer, it says so. Routes to human with full context intact. Never guesses.\n\n• Lever 5 - Voice and persona: Peer-level. Precise over warm. Treats brokers as experts, not customers."
+      "subtitle1": "Lever 1 • Trigger intent taxonomy",
+      "body1": "Mine real tickets. Name the problem. Tags answer what, never how.",
+      "subtitle2": "Lever 2 • Domain modules",
+      "body2": "Each intent maps to one module. The module sets the logic, the sources, and the exact condition that fires a human handoff.",
+      "subtitle3": "Lever 3 • Response structure",
+      "body3": "Direct answer first. Detail second. One follow up question. Never a command.",
+      "subtitle4": "Lever 4 • Guardrails",
+      "body4": "When the AI can't answer, it says so. Routes to human with full context intact. Never guesses.",
+      "subtitle5": "Lever 5 • Voice and persona",
+      "body5": "Peer-level. Precise over warm. Treats brokers as experts, not customers."
+    },
+    {
+      "block": "TextX5",
+      "title": "The output, lever by lever.",
+      "subtitle1": "Lever 1 Trigger intent taxonomy",
+      "body1": "Listing issue detected.",
+      "subtitle2": "Lever 2 • Domain modules",
+      "body2": "Listing issue detected. Related to marketplace compliance, flagged purchase entity. Policy ref: 4.2.",
+      "subtitle3": "Lever 3 • Response structure",
+      "body3": "Your listing is under review due to a flagged purchase entity. Policy ref: 4.2. Marketplace compliance. Estimated resolution ~24 hours. Reference ID: #TID223123111. Do you want me to escalate this to a specialist?",
+      "subtitle4": "Lever 4 • Guardrails",
+      "body4": "Your listing is under review due to a flagged purchase entity. Policy ref: 4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. If unresolved after 4 hours, this will automatically escalate to a human agent with full context.",
+      "subtitle5": "Lever 5 • Voice and persona",
+      "body5": "Marketplace issue detected on listing #TID223123111. Root cause: flagged purchase entity. Policy ref: §4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. Reference ID logged. Specialist assigned. If unresolved after 4 hours, this escalates automatically with full context."
     },
     {
       "block": "TextX1",
-      "title": "The output, lever by lever.",
-      "body": "• Lever 1 - Listing issue detected.\n\n• Lever 2 - Listing issue detected. Related to marketplace compliance, flagged purchase entity. Policy ref: 4.2.\n\n• Lever 3 - Your listing is under review due to a flagged purchase entity. Policy ref: 4.2. Marketplace compliance. Estimated resolution ~24 hours. Reference ID: #TID223123111. Do you want me to escalate this to a specialist?\n\n• Lever 4 - Your listing is under review due to a flagged purchase entity. Policy ref: 4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. If unresolved after 4 hours, this will automatically escalate to a human agent with full context.\n\n• Lever 5 - Marketplace issue detected on listing #TID223123111. Root cause: flagged purchase entity. Policy ref: §4.2 Marketplace Compliance. Estimated resolution ~24 hours. No action needed from your side. Reference ID logged. Specialist assigned. If unresolved after 4 hours, this escalates automatically with full context."
+      "title": "Designing for complexity without confusion",
+      "body": "Everything in this case study sits on top of a more fundamental question: how do you design for a data heavy, high stakes enterprise platform without overwhelming the people who depend on it? The brokers using ReachPro manage millions in GMS across hundreds of events. Complexity isn't the problem, confusion is. This section covers the core design heuristics that guided every decision: findability, accuracy, readability, intelligence, and role based personalization. These aren't aesthetic choices. They're the operating principles of the platform."
     },
     {
       "block": "TextX4",

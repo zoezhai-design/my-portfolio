@@ -56,9 +56,12 @@ const notion = new Client({ auth: NOTION_API_KEY });
 // Handles space-separated labels with optional trailing numbers.
 
 const FIELD_MAP: Record<string, string> = {
-  // image
+  // image (all numbered variants trigger a new item in array blocks)
   'image':           'image',
   'image 1':         'image',
+  'image 2':         'image',
+  'image 3':         'image',
+  'image 4':         'image',
   // label / title
   'label':           'label',
   'label title':     'labelTitle',
@@ -272,8 +275,10 @@ function parseSection(lines: string[]): Record<string, any> | null {
             if (extraKV) { current[extraKV[0]] = extraKV[1]; lastItemKey = extraKV[0]; }
           }
         } else if (current) {
-          current[key] = val;
-          lastItemKey = key;
+          // Within an item, bodyN → body (each item has one body field)
+          const itemKey = /^body\d+$/.test(key) ? 'body' : key;
+          current[itemKey] = val;
+          lastItemKey = itemKey;
         } else {
           block[key] = val;
           lastItemKey = '';
